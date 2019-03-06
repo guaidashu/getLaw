@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+		<base href="http://law.npc.gov.cn:8081/FLFG/">
+
+		<title>中国法律法规信息库</title>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link href="css/xianfa.css" rel="stylesheet" type="text/css">
+		<script src="http://law.npc.gov.cn:8081/FLFG/js/jquery-1.6.2.min.js" type="text/javascript"></script>
+
+		<script type="text/javascript">
+	
+
+		
+	function showLocation(param1,param2,param3){
+		window.open("http://law.npc.gov.cn:8081/FLFG/flfgByID.action?flfgID="+param1+"&keyword="+encodeURI(param2)+"&zlsxid="+param3);
+	}	
+	function jiansuo() {
+		var keyword = validate(document.getElementById("keyword").value);
+		//keyword = validate(keyword);
+		if (keyword.length <2){
+			alert("有效检索词至少输入两个字！");
+			return;
+		} else {
+			document.getElementById("keyword").value = keyword;
+		}
+		document.getElementById("zlsxid").value = "";
+		document.getElementById("bmflid").value = "";
+		document.getElementById("zdjg").value = "";
+		document.getElementById("txtid").value = "";
+		document.forms.myform.submit();
+	}
+	document.onkeydown = function(event) {
+		var e = event || window.event || arguments.callee.caller.arguments[0];
+		if (e && e.keyCode == 13) { // enter 键
+			jiansuo();
+		}
+	};
+	function validate(keyword) {
+		var pattern = new RegExp(
+				"[%--`~!@#$^&*()=|{}':;',\\[\\]\\\\.<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]"); //格式 RegExp("[在中间定义特殊过滤字符]")  
+
+		var rs = "";
+		for ( var i = 0; i < keyword.length; i++) {
+			rs = rs + keyword.substr(i, 1).replace(pattern, '');
+		}
+		return rs;
+	}
+	function keydown(){
+		 var thisVal=$("#keyword").val();
+	     //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+	     if(thisVal!=""){
+	       $("#text_span").hide();
+	      }else{
+	         $("#text_span").show();
+	      }	
+		}
+		function keyup(){
+		var thisVal=$("#keyword").val();
+	     //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+	    if(thisVal!=""){
+	       $("#text_span").hide();
+	      }else{
+	         $("#text_span").show();
+	      }
+		}
+	 $(function(){
+		keydown();
+	 	keyup();  
+	    
+	  })
+	  function gjsearch(){
+		 window.open("http://law.npc.gov.cn:8081/FLFG/gjSearch.action");
+	   // location.href="http://law.npc.gov.cn:8081/FLFG/gjSearch.action";
+	  }
+</script>
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<div id="content">
+				<div id="header">
+					<div id="header_logo">
+						<img alt="" src="imgs/top.png">
+					</div>
+					<form action="http://law.npc.gov.cn:8081/FLFG/ksjsCateGroup.action" method="post" name="myform" style="padding: 0px; margin: 0px;">
+						<div id="header_search">
+							<div id="search_body">
+								<input type="hidden" name="pagesize" id="pagesize" value="20">
+								<input type="hidden" name="pageCount" id="pageCount" value="0">
+								<input type="hidden" name="curPage" id="curPage" value="1">
+								<input type="hidden" name="SFYX" id="SFYX" value="有效">
+								<input type="hidden" name="showDetailType" id="showDetailType" value="QW">
+									<input type="hidden" name="txtid" id="txtid" value="">
+								<input type="hidden" name="zlsxid" id="zlsxid" value="">
+								<input type="hidden" name="bmflid" id="bmflid" value="">
+								<input type="hidden" name="zdjg" id="zdjg" value="新法速递">
+								<input type="hidden" name="resultSearch" id="resultSearch" value="false">
+								<input type="hidden" name="lastStrWhere" id="lastStrWhere" value="">
+								<div style="color:white;margin-left:10px; margin-top:15px; float:left;margin-top: 12px;">当前位置：</div>
+								<a href="http://www.npc.gov.cn/" style="color:white;margin-left:10px; margin-top:15px; float:left;margin-top: 12px;">首页</a>
+								<div style="color:white;margin-left:10px; margin-top:15px; float:left;margin-top: 10px;">&gt;&gt;</div>
+								<a href="http://law.npc.gov.cn:8081/FLFG/index.jsp" style="color:white;margin-left:20px; margin-top:15px; float:left;margin-top: 12px;">法律法规库</a>
+								<div style="color:white;margin-left:10px; margin-top:15px; float:left;margin-top: 10px;">&gt;&gt;</div>
+								
+								<div style="color:white;margin-left:10px; margin-top:15px; float:left;margin-top: 12px;">宪法</div>
+					            
+								<label id="text_label">
+									<span id="text_span"><!-- 请输入标题或正文内容 --></span>
+								<input type="text" class="txt" name="keyword" id="keyword" onkeydown="keydown()" onkeyup="keyup()" value="" maxlength="255">
+								<input type="button" value="  检  索 " class="btn" onclick="jiansuo()"><a href="http://law.npc.gov.cn:8081/FLFG/gjSearch.action" style="color:white;margin-left:10px; margin-top:15px; float:left;" target="_blank">高级检索</a>
+								
+							</label>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+				<div id="main">
+					<table>
+					<tbody><tr>
+					<th align="center" style="_width: 20px; width: 5%;" class="td">
+						序号
+					</th>
+					<th align="center" style="_width: 690px; width: 70%;" class="td">
+						标题
+					</th>
+					<th align="center" style="_width: 40px; width: 10%;" class="td">
+						颁布日期
+					</th>
+					<th align="center" style="_width: 40px; width: 10%;" class="td">
+						时效性
+ 
+					</th>
+ 
+				</tr>
+                                                <tr>
+							<td class="td" align="center">
+								&nbsp;1&nbsp;
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('37326216','','01');" title="中华人民共和国宪法">    
+										中华人民共和国宪法 
+
+									 </a>
+							</td>
+							<td class="td" align="center">
+								2018/03/11
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+
+						<tr>
+							<td class="td" align="center">
+								&nbsp;2&nbsp;
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('37291566','','08');" title="中华人民共和国宪法修正案 ">    
+										中华人民共和国宪法修正案 
+
+									 </a>
+							</td>
+							<td class="td" align="center">
+								2018/03/11
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+
+
+
+						<tr>
+							<td class="td" align="center">
+								3
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('37257858','','10');" title="全国人民代表大会常务委员会关于实行宪法宣誓制度的决定(2018修订) ">    
+										全国人民代表大会常务委员会关于实行宪法宣誓制度的决定(2018修订) 
+
+									 </a>
+							</td>
+							<td class="td" align="center">
+								2018/02/24
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+
+
+					
+					<tr>
+							<td class="td" align="center">
+								4
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('34964926','','10');" title="全国人民代表大会常务委员会关于实行宪法宣誓制度的决定">    
+										全国人民代表大会常务委员会关于实行宪法宣誓制度的决定
+									 </a>
+							</td>
+							<td class="td" align="center">
+								2015/07/01
+							</td>
+							<td class="td" align="center">
+								已被修正
+							</td>
+ 
+						</tr>
+					
+				
+					
+					
+						<tr>
+							<td class="td" align="center">
+								5
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('34496476','','10');" title="全国人民代表大会常务委员会关于设立国家宪法日的决定">   
+										全国人民代表大会常务委员会关于设立国家宪法日的决定
+															  </a>
+							</td>
+							<td class="td" align="center">
+								2014/11/01
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+					
+				
+					
+					
+					
+						<tr>
+							<td class="td" align="center">
+								6
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('991001','','1');" title="中华人民共和国宪法(2004修正)">    
+										中华人民共和国宪法(2004修正)
+									 </a>
+							</td>
+							<td class="td" align="center">
+								2004/03/14
+							</td>
+							<td class="td" align="center">
+								已被修正
+							</td>
+ 
+						</tr>
+					
+						<tr>
+							<td class="td" align="center">
+								7
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('106988','','8');" title="中华人民共和国宪法修正案">    
+										中华人民共和国宪法修正案
+									 </a>
+							</td>
+							<td class="td" align="center">
+								2004/03/14
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+					 
+					 
+					  <tr>
+							<td class="td" align="center">
+								8
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('290','','8');" title="中华人民共和国宪法修正案">    
+										中华人民共和国宪法修正案
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1999/03/15
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+					 
+					 
+				
+					  <tr>
+							<td class="td" align="center">
+								9
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('156','','8');" title="中华人民共和国宪法修正案">    
+										中华人民共和国宪法修正案
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1993/03/29
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+					
+					
+					
+					
+				
+					
+					
+					
+				
+					
+					
+						<tr>
+							<td class="td" align="center">
+								10
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('89','','8');" title="中华人民共和国宪法修正案">    
+										中华人民共和国宪法修正案
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1988/04/12
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+					
+				
+				
+				        <tr>
+							<td class="td" align="center">
+								11
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('40','','1');" title="中华人民共和国宪法">   
+										中华人民共和国宪法
+															  </a>
+							</td>
+							<td class="td" align="center">
+								1982/12/04
+							</td>
+							<td class="td" align="center">
+								已被修正
+							</td>
+ 
+						</tr>
+					
+			
+					 <tr>
+							<td class="td" align="center">
+								12
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('270959','','10');" title="全国人民代表大会常务委员会关于公布《中华人民共和国宪法修改草案》的决议">   
+										全国人民代表大会常务委员会关于公布《中华人民共和国宪法修改草案》的决议
+															  </a>
+							</td>
+							<td class="td" align="center">
+								1982/04/26
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+				
+					
+					
+						<tr>
+							<td class="td" align="center">
+								13
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('430','','10');" title="第五届全国人民代表大会第三次会议关于修改《中华人民共和国宪法》第四十五条的决议">   
+										第五届全国人民代表大会第三次会议关于修改《中华人民共和国宪法》第四十五条的决议
+															  </a>
+							</td>
+							<td class="td" align="center">
+								1980/09/10
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+					
+				
+					
+					
+						<tr>
+							<td class="td" align="center">
+								14
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('29','','10');" title="第五届全国人民代表大会第三次会议关于修改宪法和成立宪法修改委员会的决议">    
+										第五届全国人民代表大会第三次会议关于修改宪法和成立宪法修改委员会的决议
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1980/09/10
+							</td>
+							<td class="td" align="center">
+								有效
+							</td>
+ 
+						</tr>
+						
+						
+						<tr>
+							<td class="td" align="center">
+								15
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('420','','10');" title="第五届全国人民代表大会第二次会议关于修正《中华人民共和国宪法》若干规定的决议">    
+										第五届全国人民代表大会第二次会议关于修正《中华人民共和国宪法》若干规定的决议
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1979/07/01
+							</td>
+							<td class="td" align="center">
+								失效
+							</td>
+ 
+						</tr>
+						
+						
+						
+						<tr>
+							<td class="td" align="center">
+								16
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('417','','1');" title="中华人民共和国宪法">    
+										中华人民共和国宪法
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1978/03/05
+							</td>
+							<td class="td" align="center">
+								失效
+							</td>
+ 
+						</tr>
+						
+						
+						
+						<tr>
+							<td class="td" align="center">
+								17
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('416','','1');" title="中华人民共和国宪法">    
+										中华人民共和国宪法
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1975/01/17
+							</td>
+							<td class="td" align="center">
+								失效
+							</td>
+ 
+						</tr>
+						
+						
+						<tr>
+							<td class="td" align="center">
+								18
+							</td>
+							<td class="td">
+								&nbsp;
+								<a href="javascript:showLocation('401','','1');" title="中华人民共和国宪法">    
+										中华人民共和国宪法
+									 </a>
+							</td>
+							<td class="td" align="center">
+								1954/09/20
+							</td>
+							<td class="td" align="center">
+								失效
+							</td>
+ 
+						</tr>
+						
+						
+					</tbody></table>
+				
+			
+				
+			</div>
+		<div style="text-align:center;color:#FFF; background-color:#1766b3; margin-top:10px; padding: 20px;">本库中的信息仅供参考，在正式场合使用时，请与标准文本核对！</div>
+		</div>
+	
+
+</body></html>

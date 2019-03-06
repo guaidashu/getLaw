@@ -1,0 +1,364 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x: hidden;"><head><meta http-equiv="X-UA-Compatible" content="IE=8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"><title>
+	首页 - 中国裁判文书网
+</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><link rel="bookmark" href="/favicon.ico" type="image/x-icon"><link href="/Assets/css/ListIndex.css" rel="stylesheet" type="text/css"><link href="/Assets/css/Menu.css" rel="stylesheet" type="text/css"><link href="/Assets/js/libs/css/import_basic.css" rel="stylesheet" type="text/css"><link id="skin" type="text/css" rel="stylesheet" splitmode="true" prepath="/Assets/js/" href="/Assets/js/libs/skins/red/style.css"><link href="/Assets/css/User.css" rel="stylesheet" type="text/css"><link id="customSkin" rel="stylesheet" type="text/css">
+    <!--jstree必需end-->
+    <link href="/Assets/css1/MainIndex.css" rel="stylesheet" type="text/css">
+    <script src="https://hm.baidu.com/hm.js?d2caefee2de09b8a6ea438d74fd98db2"></script><script type="text/javascript" async="" src="http://static.gridsumdissector.com/js/Clients/GWD-002808-030F33/gs.js"></script><script src="/Assets/js/libs/js/jquery.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.Charts.Option.js" type="text/javascript"></script>
+    <script src="/Assets/Js/lawyee.BigData.Common.js" type="text/javascript"></script>
+    <script src="/Assets/Js/Lawyee.BigData.Ajax.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.Common.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Scripts/respond.min.js"></script>
+    <!--qui框架必需start-->
+    <script type="text/javascript" src="/Assets/js/libs/js/language/cn.js"></script>
+    <script type="text/javascript" src="/Assets/js/libs/js/framework.js"></script>
+    <!--qui框架必需end-->
+    <!-- 日期选择框start -->
+    <script type="text/javascript" src="/Assets/js/libs/js/form/datePicker/WdatePicker.js"></script><link href="/Assets/js/libs/js/form/datePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+    <!-- 日期选择框end -->
+    <!-- 树组件start -->
+    <script type="text/javascript" src="/Assets/js/libs/js/tree/ztree/ztree.js"></script>
+    <link type="text/css" rel="stylesheet" href="/Assets/js/libs/js/tree/ztree/ztree.css">
+    <!-- 树组件end -->
+    <script src="/Assets/js9/Lawyee.CPWSW.Index.js" type="text/javascript"></script>   
+    <script src="/Assets/js8/Lawyee.CPWSW.SearchIndex.js" type="text/javascript"></script>
+    <script src="/Assets/js8/Lawyee.CPWSW.JsTree.js" type="text/javascript"></script>
+    <script src="/Assets/js8/Lawyee.CPWSW.List.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.ListLoad.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.json-2.3.min.js" type="text/javascript"></script>
+    <script src="/Assets/js/lawyee.selectTree.js" type="text/javascript"></script>
+    <script src="/Assets/js/lawyee.namespace.root.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.DictData.js" type="text/javascript"></script>
+    <!-- 日志统计功能start -->
+    <script src="/Assets/js/Lawyee.CPWSW.WebsiteLog.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.GridSum.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.BaiduStatic.js" type="text/javascript"></script>
+     <script type="text/javascript">//2018-08-12 19:30:14:204;
+ var courtAllData=eval("[{\"PvCount\":[{\"Status\":true,\"Count\":\"\" }]},{\"TotalCount\":[{\"Count\":\"50264384\"}],\"CaseTypeCount\":[{\"name\":\"刑事案件\",\"count\":[{\"Count\":\"6726051\"}]},{\"name\":\"民事案件\",\"count\":[{\"Count\":\"31987570\"}]},{\"name\":\"行政案件\",\"count\":[{\"Count\":\"1593056\"}]},{\"name\":\"赔偿案件\",\"count\":[{\"Count\":\"41395\"}]},{\"name\":\"执行案件\",\"count\":[{\"Count\":\"9789023\"}]}] },{\"AddCount\":[{\"Count\":\"17286\"}],\"CaseTypeAddCount\":[{\"name\":\"刑事案件\",\"count\":[{\"Count\":\"56\"}]},{\"name\":\"民事案件\",\"count\":[{\"Count\":\"589\"}]},{\"name\":\"行政案件\",\"count\":[{\"Count\":\"41\"}]},{\"name\":\"赔偿案件\",\"count\":[{\"Count\":\"1\"}]},{\"name\":\"执行案件\",\"count\":[{\"Count\":\"16599\"}]}] }]"); 
+ var courtData=eval("[{ court:\u0027北京市高级人民法院\u0027, province:\u0027北京\u0027,region:\u0027\u0027, leval:\u00272\u0027, key:\u0027001001000\u0027},{ court:\u0027北京市第一中级人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第一中级人民法院辖区\u0027, leval:\u00273\u0027, key:\u0027001001001000\u0027},{ court:\u0027北京市第二中级人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第二中级人民法院辖区\u0027, leval:\u00273\u0027, key:\u0027001001002000\u0027},{ court:\u0027北京市第三中级人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第三中级人民法院辖区\u0027, leval:\u00273\u0027, key:\u0027001001004000\u0027},{ court:\u0027北京市第四中级人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第四中级人民法院辖区\u0027, leval:\u00273\u0027, key:\u0027001001006000\u0027},{ court:\u0027北京知识产权法院\u0027, province:\u0027北京\u0027,region:\u0027北京知识产权法院辖区\u0027, leval:\u00273\u0027, key:\u0027001001005000\u0027}]"); 
+ var userData=; 
+ var ChildCourtdata=eval("[{ court:\u0027北京市石景山区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第一中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001001003\u0027, parentkey:\u0027001001001000\u0027},{ court:\u0027北京市海淀区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第一中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001001004\u0027, parentkey:\u0027001001001000\u0027},{ court:\u0027北京市门头沟区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第一中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001001005\u0027, parentkey:\u0027001001001000\u0027},{ court:\u0027北京市昌平区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第一中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001001007\u0027, parentkey:\u0027001001001000\u0027},{ court:\u0027北京市延庆区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第一中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001001009\u0027, parentkey:\u0027001001001000\u0027},{ court:\u0027北京市东城区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第二中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001002001\u0027, parentkey:\u0027001001002000\u0027},{ court:\u0027北京市丰台区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第二中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001002004\u0027, parentkey:\u0027001001002000\u0027},{ court:\u0027北京市西城区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第二中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001002010\u0027, parentkey:\u0027001001002000\u0027},{ court:\u0027北京市房山区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第二中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001002011\u0027, parentkey:\u0027001001002000\u0027},{ court:\u0027北京市大兴区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第二中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001002012\u0027, parentkey:\u0027001001002000\u0027},{ court:\u0027北京市朝阳区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第三中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001004001\u0027, parentkey:\u0027001001004000\u0027},{ court:\u0027北京市顺义区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第三中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001004002\u0027, parentkey:\u0027001001004000\u0027},{ court:\u0027北京市通州区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第三中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001004003\u0027, parentkey:\u0027001001004000\u0027},{ court:\u0027北京市平谷区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第三中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001004004\u0027, parentkey:\u0027001001004000\u0027},{ court:\u0027北京市怀柔区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第三中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001004005\u0027, parentkey:\u0027001001004000\u0027},{ court:\u0027北京市密云区人民法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第三中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001004006\u0027, parentkey:\u0027001001004000\u0027},{ court:\u0027北京铁路运输法院\u0027, province:\u0027北京\u0027,region:\u0027北京市第四中级人民法院辖区\u0027, leval:\u00274\u0027, key:\u0027001001006001\u0027, parentkey:\u0027001001006000\u0027},]"); </script>
+    <!--生成二维码start-->
+    <script src="/Assets/js/qrcode/qrcode.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.MobileApp.js" type="text/javascript"></script>
+    <!--生成二维码end-->
+    <script language="JavaScript" type="text/javascript">
+        function createGuid() {
+            return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+        }
+        function ref() {
+            var guid = createGuid() + createGuid() + "-" + createGuid() + "-" + createGuid() + createGuid() + "-" + createGuid() + createGuid() + createGuid(); //CreateGuid();
+            $("#txthidGuid").val(guid);
+            $("#divYzmImg").html("<img alt='点击刷新验证码！' name='validateCode' id='ImgYzm' onclick='ref()'  title='点击切换验证码' src='/ValiCode/CreateCode/?guid=" + guid + "' style='cursor: pointer;'  />");
+        }
+        //显示灰色 jQuery 遮罩层 
+        function showBg() {
+            var bh = $("body").height();
+            var bw = $("body").width();
+            $("#fullbg").css({
+                height: bh,
+                width: bw,
+                display: "block"
+            });
+            $("#dialog").show();
+        }
+        //    function YZMSure() {
+        //        debugger;
+        //        SearchWords.prototype.YZMSure();
+        //    }
+        //关闭灰色 jQuery 遮罩 
+        function closeBg() {
+            $("#fullbg,#dialog").hide();
+        }
+        $(function () {
+           
+           
+            //开启统计功能
+            WebsiteLog.Config.Util = "Country,Area,City,Region,IP,Source,StartYear,EndYear,StartMonth,EndMonth,StartDay,EndDay,Device,PageURL,CreateDateTime";
+            WebsiteLog.Init();
+            document.body.onclick = function (e) {
+                //控制高级检索面板显示或隐藏
+                panelShowOrHide(e, "head_maxsearch_btn", "advanceSearchPanel");
+                panelShowOrHide(e, "gover_search_key", "suggestPanel", false);
+                if ($(".head_maxsearch_txt").css("display") == "none") {
+                    $("#head_maxsearch_btn").css("color", "#c21e24");
+                    $("#head_maxsearch_btn").css("opacity", 1);
+                }
+                if ($(".head_maxsearch_txt").css("display") == "block") {
+                    $("#head_maxsearch_btn").css("opacity", 1);
+                }
+            }
+            //生成二维码
+            $("#divtdc").MobileAppQrCode();
+        });
+
+        function openApp() {
+            $("#divtdc").show();
+        }
+    </script>
+    <style type="text/css">
+ #fullbg { 
+        background-color:gray; 
+        left:0; 
+        opacity:0.5; 
+        position:absolute; 
+        top:0; 
+        z-index:3; 
+        filter:alpha(opacity=50); 
+        -moz-opacity:0.5; 
+        -khtml-opacity:0.5; 
+        } 
+        #dialog { 
+        background-color:#fff; 
+        border:5px solid rgba(0,0,0, 0.4); 
+        height:200px; 
+        left:50%; 
+        margin:-200px 0 0 -200px; 
+        padding:1px; 
+        position:fixed !important; /* 浮动对话框 */ 
+        position:absolute; 
+        top:50%; 
+        width:400px; 
+        z-index:9999; 
+        border-radius:5px; 
+        display:none; 
+        border:#ccc 1px solid
+        } 
+        #dialog p { 
+        margin:0 0 12px; 
+        height:24px; 
+        line-height:24px; 
+        background:#CCCCCC; 
+        } 
+        #dialog p.close { 
+        text-align:right; 
+        padding-right:10px; 
+        } 
+        #dialog p.close a { 
+        color:#fff; 
+        text-decoration:none; 
+        } 
+         .dialogtxt
+        {
+            border:#cd3c3f 1px solid;
+            line-height:25px;
+            height:25px;
+            font-size:15px;
+        }
+        .dialogbtn
+        {
+            background-color:#cd3c3f;
+            color:white;
+            border:0px;
+            width:90px;
+            height:30px;
+            margin:10px
+        }
+         #dialog div
+         {
+            margin:20px  
+         }
+</style>
+</head>
+<body class="contentStyle">
+    <div class="main">
+        <div id="top2">
+            <div id="top_left">
+                <script language="JavaScript" type="text/javascript">
+                    today = new Date();
+                    function initArray() {
+                        this.length = initArray.arguments.length
+                        for (var i = 0; i < this.length; i++)
+                            this[i + 1] = initArray.arguments[i]
+                    }
+                    var d = new initArray(
+							"星期日",
+							 "星期一",
+							 "星期二",
+							 "星期三",
+							 "星期四",
+							 "星期五",
+							 "星期六");
+                    document.write(
+		                  today.getFullYear(), "年",
+		                  today.getMonth() + 1, "月",
+		                  today.getDate(), "日 ",
+		                  d[today.getDay() + 1]
+		                 );
+                    
+                </script>2018年8月12日 星期日
+            </div>
+            <div id="top_right">
+                <div id="loginInfo" class="loginInfo"><a onclick="SaveUrl()" href="/User/RegisterAndLogin?Operate=1">登录</a> <a href="/User/RegisterAndLogin">注册</a></div>
+                <a href="/User/AddSuggest" target="_blank">意见建议</a> <a href="http://www.court.gov.cn" target="_blank">返回主站</a> <a href="#" onclick="openApp()">App下载</a>
+            </div>
+        </div>
+        <div id="shop">
+            <div id="caption">
+            </div>
+            <div id="nav">
+                <ul>
+                    <li class="zhuye"><a href="/Index">首页</a></li>
+                    <li><a href="/List/List?sorttype=1&amp;conditions=searchWord+1+AJLX++案件类型:刑事案件" target="_blank">
+                        刑事案件</a></li>
+                    <li><a href="/List/List?sorttype=1&amp;conditions=searchWord+2+AJLX++案件类型:民事案件" target="_blank">
+                        民事案件</a></li>
+                    <li><a href="/List/List?sorttype=1&amp;conditions=searchWord+3+AJLX++案件类型:行政案件" target="_blank">
+                        行政案件</a></li>
+                    <li><a href="/List/List?sorttype=1&amp;conditions=searchWord+4+AJLX++案件类型:赔偿案件" target="_blank">
+                        赔偿案件</a></li>
+                    <li><a href="/List/List?sorttype=1&amp;conditions=searchWord+5+AJLX++案件类型:执行案件" target="_blank">
+                        执行案件</a></li>
+                    <li class="yuyan"><a id="yuyan_a" href="javascript:void();">民族语言文书</a>
+                        <ul>
+                            <li><a href="/List/MongolianList" target="_blank">蒙古语</a></li>
+                            <li><a href="/List/TibetanList" target="_blank">藏语</a></li>
+                            <li><a href="/List/UygurList" target="_blank">维吾尔语</a></li>
+                            <li><a href="/List/KoreanList" target="_blank">朝鲜语</a></li>
+                            <li><a href="/List/KazakhList" target="_blank">哈萨克语</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="box_1" class="contentMiddle">
+                <div id="contentMain">
+                    <div id="searchBox"><div id="dialog" class="head_search_container"><input class="" id="txthidGuid" style="display:none" type="text"><input class="" id="txthidtype" style="display:none" type="text"><input class="" id="txthidpage" style="display:none" type="text"><input class="" id="txthidtree" style="display:none" type="text"><input class="" id="txthidtreekey" style="display:none" type="text"><div id="divYzmImg"></div><div style="color:#cd3c3f">请输入验证码：<input class="dialogtxt" id="txtValidateCode" type="text"><span id="diverror"></span></div><div id="div1" style="bottom:20px"><input class="dialogbtn" id="btn_yzmsure" value="确定" type="button"><input class="dialogbtn" id="btn_yzmcacle" value="取消" type="button"></div></div><div class="head_search_container"><div class="head_search_leftfloat"><input class="head_maxsearch_btn" value="" id="head_maxsearch_btn" style="color: rgb(194, 30, 36); opacity: 1;" type="button"></div><div class="head_search_middle"><input name="全文检索" key="全文检索" class="head_search_key" id="gover_search_key" value="输入案由、关键词、法院、当事人、律师" type="text"></div><div class="head_search_rightfloat"><button type="submit" class="head_search_btn">搜索</button></div><div class="helpBtn"><a href="/Index/Help" target="_blank"><img src="/Assets/img/Index/help.png" title="搜索帮助" width="52" height="52" border="0"></a></div><div id="suggestPanel" class="search_suggest"></div><div id="advanceSearchPanel" class="head_maxsearch_txt"><div id="advanceSearchContent" class="list_maxcon"><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanQWJS">全文检索:</span></div><div class="fieldvalue"><table id="adsearch_QWJS"><tbody><tr><td><input id="completxt" sign="QWJS" key="全文检索" style="width: 120px; font-family: 宋体; font-size: 12px;" class="quitype textinput" truetype="textinput" type="text"></td><td><div class="mainCon"><table style="border-style:none;" cellspacing="0" cellpadding="0"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="7_input" class="selectbox" autocomplete="off" tabindex="0" style="width: 36px; font-family: 宋体; font-size: 12px; cursor: pointer;" type="text" contenteditable="false"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input value=" " class="selBtn" id="7_button" type="button"></td></tr></tbody></table><div id="7_container" class="selectbox-wrapper" hasfocus="0" style="display: none;"><ul><li id="7_input_全文" class="selected">全文</li><li id="7_input_首部">首部</li><li id="7_input_事实">事实</li><li id="7_input_理由">理由</li><li id="7_input_判决结果">判决结果</li><li id="7_input_尾部">尾部</li></ul></div><div class="loader" style="display: none;">数据加载中...</div></div><select id="adsearch_dl" selwidth="60" name="undefined" class="quiselect" key="全文检索" sign="QWJS" type="completxt" condition="" truetype="select" style="display: none;" length="10" reltext="全文" relvalue="全文" finished="true"><option value="全文">全文</option><option value="首部">首部</option><option value="事实">事实</option><option value="理由">理由</option><option value="判决结果">判决结果</option><option value="尾部">尾部</option><option value="全文">全文</option><option value="首部">首部</option><option value="事实">事实</option><option value="理由">理由</option><option value="判决结果">判决结果</option><option value="尾部">尾部</option></select></td></tr></tbody></table></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanAY">案由:</span></div><div class="fieldvalue"><div class="selectTree mainCon" keepdefaultstyle="true" selwidth="188" name="AJLX" key="案由" sign="AY" type="dict" truetype="selectTree" reltext="请选择" relvalue="" id="adsearch_AY"><table style="border-style:none;" cellspacing="0" cellpadding="0"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="selectTree2_input" class="selectbox" autocomplete="off" readonly="readonly" style="width: 164px; font-family: 宋体; font-size: 12px; cursor: pointer;" type="text"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input value=" " class="selBtn" id="selectTree2_button" type="button"></td></tr></tbody></table><div id="selectTree2_container" class="selectbox-tree" hasfocus="0" style="display: none;"><ul class="ztree" id="selectTree2_tree" style="-moz-user-select: none;"><li id="selectTree2_tree_1" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="selectTree2_tree_1_switch" title="" class="zbutton level0 switch roots_docu" treenode_switch=""></span><a id="selectTree2_tree_1_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="请选择"><span id="selectTree2_tree_1_ico" title="" treenode_ico="" class="zbutton ico_docu" style="background:url(/Assets/js/libs/icons/mark.png) 0 0 no-repeat;"></span><span id="selectTree2_tree_1_span">请选择</span></a></li><li id="selectTree2_tree_2" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="selectTree2_tree_2_switch" title="" class="zbutton level0 switch center_close" treenode_switch=""></span><a id="selectTree2_tree_2_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="刑事案由"><span id="selectTree2_tree_2_ico" title="" treenode_ico="" class="zbutton ico_close" style=""></span><span id="selectTree2_tree_2_span">刑事案由</span></a></li><li id="selectTree2_tree_522" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="selectTree2_tree_522_switch" title="" class="zbutton level0 switch center_close" treenode_switch=""></span><a id="selectTree2_tree_522_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="民事案由"><span id="selectTree2_tree_522_ico" title="" treenode_ico="" class="zbutton ico_close" style=""></span><span id="selectTree2_tree_522_span">民事案由</span></a></li><li id="selectTree2_tree_1370" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="selectTree2_tree_1370_switch" title="" class="zbutton level0 switch center_close" treenode_switch=""></span><a id="selectTree2_tree_1370_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="行政案由"><span id="selectTree2_tree_1370_ico" title="" treenode_ico="" class="zbutton ico_close" style=""></span><span id="selectTree2_tree_1370_span">行政案由</span></a></li><li id="selectTree2_tree_1446" class="level0" tabindex="0" hidefocus="true" treenode=""><span id="selectTree2_tree_1446_switch" title="" class="zbutton level0 switch bottom_close" treenode_switch=""></span><a id="selectTree2_tree_1446_a" class="level0" treenode_a="" onclick="" target="_blank" style="" title="赔偿案由"><span id="selectTree2_tree_1446_ico" title="" treenode_ico="" class="zbutton ico_close" style=""></span><span id="selectTree2_tree_1446_span">赔偿案由</span></a></li></ul></div><input name="AJLX" value="" type="hidden"></div></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanAJMC">案件名称:</span></div><div class="fieldvalue"><input key="案件名称" sign="AJMC" style="width: 188px; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_AJMC" truetype="textinput" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanAH">案号:</span></div><div class="fieldvalue"><input key="案号" sign="AH" style="width: 188px; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_AH" truetype="textinput" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanSLFY">法院名称:</span></div><div class="fieldvalue"><input key="法院名称" sign="SLFY" style="width: 188px; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_SLFY" truetype="textinput" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanFYCJ">法院层级:</span></div><div class="fieldvalue"><div class="mainCon"><table style="border-style:none;" cellspacing="0" cellpadding="0"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="8_input" class="selectbox" autocomplete="off" tabindex="0" style="width: 164px; font-family: 宋体; font-size: 12px; cursor: pointer;" type="text" contenteditable="false"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input value=" " class="selBtn" id="8_button" type="button"></td></tr></tbody></table><div id="8_container" class="selectbox-wrapper" hasfocus="0" style="display: none;"><ul><li id="8_input_none" class="selected">请选择</li><li id="8_input_all">全部</li><li id="8_input_1">最高法院</li><li id="8_input_2">高级法院</li><li id="8_input_3">中级法院</li><li id="8_input_4">基层法院</li></ul></div><div class="loader" style="display: none;">数据加载中...</div></div><select selwidth="188" name="undefined" class="quiselect" key="法院层级" sign="FYCJ" type="list" condition="" truetype="select" style="display: none;" length="10" reltext="请选择" relvalue="none" finished="true" id="adsearch_FYCJ"><option value="none">请选择</option><option value="all">全部</option><option value="1">最高法院</option><option value="2">高级法院</option><option value="3">中级法院</option><option value="4">基层法院</option><option value="none">请选择</option><option value="all">全部</option><option value="1">最高法院</option><option value="2">高级法院</option><option value="3">中级法院</option><option value="4">基层法院</option></select></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanAJLX">案件类型:</span></div><div class="fieldvalue"><div class="mainCon"><table style="border-style:none;" cellspacing="0" cellpadding="0"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="9_input" class="selectbox" autocomplete="off" tabindex="0" style="width: 164px; font-family: 宋体; font-size: 12px; cursor: pointer;" type="text" contenteditable="false"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input value=" " class="selBtn" id="9_button" type="button"></td></tr></tbody></table><div id="9_container" class="selectbox-wrapper" hasfocus="0" style="display: none;"><ul><li id="9_input_none" class="selected">请选择</li><li id="9_input_1">刑事案件</li><li id="9_input_2">民事案件</li><li id="9_input_3">行政案件</li><li id="9_input_4">赔偿案件</li><li id="9_input_5">执行案件</li></ul></div><div class="loader" style="display: none;">数据加载中...</div></div><select selwidth="188" name="undefined" class="quiselect" key="案件类型" sign="AJLX" type="list" condition="" truetype="select" style="display: none;" length="10" reltext="请选择" relvalue="none" finished="true" id="adsearch_AJLX"><option value="none">请选择</option><option value="1">刑事案件</option><option value="2">民事案件</option><option value="3">行政案件</option><option value="4">赔偿案件</option><option value="5">执行案件</option><option value="none">请选择</option><option value="1">刑事案件</option><option value="2">民事案件</option><option value="3">行政案件</option><option value="4">赔偿案件</option><option value="5">执行案件</option></select></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanSPCX">审判程序:</span></div><div class="fieldvalue"><div class="mainCon"><table style="border-style:none;" cellspacing="0" cellpadding="0"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="10_input" class="selectbox" autocomplete="off" tabindex="0" style="width: 164px; font-family: 宋体; font-size: 12px; cursor: pointer;" type="text" contenteditable="false"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input value=" " class="selBtn" id="10_button" type="button"></td></tr></tbody></table><div id="10_container" class="selectbox-wrapper" hasfocus="0" style="display: none;"><ul><li id="10_input_none" class="selected">请选择</li><li id="10_input_all_一审">一审</li><li id="10_input_all_二审">二审</li><li id="10_input_all_再审">再审</li><li id="10_input_all_非诉执行审查">非诉执行审查</li><li id="10_input_all_复核">复核</li><li id="10_input_all_刑罚变更">刑罚变更</li><li id="10_input_all_再审审查与审判监督">再审审查与审判监督</li><li id="10_input_all_其他">其他</li></ul></div><div class="loader" style="display: none;">数据加载中...</div></div><select selwidth="188" name="AJLX" class="quiselect" key="审判程序" sign="SPCX" type="list" condition="" truetype="select" style="display: none;" length="10" reltext="请选择" relvalue="none" finished="true" id="adsearch_SPCX"><option value="none">请选择</option><option value="all_一审">一审</option><option value="all_二审">二审</option><option value="all_再审">再审</option><option value="all_非诉执行审查">非诉执行审查</option><option value="all_复核">复核</option><option value="all_刑罚变更">刑罚变更</option><option value="all_再审审查与审判监督">再审审查与审判监督</option><option value="all_其他">其他</option><option value="none">请选择</option><option value="all_一审">一审</option><option value="all_二审">二审</option><option value="all_再审">再审</option><option value="all_非诉执行审查">非诉执行审查</option><option value="all_复核">复核</option><option value="all_刑罚变更">刑罚变更</option><option value="all_再审审查与审判监督">再审审查与审判监督</option><option value="all_其他">其他</option></select></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanWSLX">文书类型:</span></div><div class="fieldvalue"><div class="mainCon"><table style="border-style:none;" cellspacing="0" cellpadding="0"><tbody><tr><td class="ali01" style="border-style:none;padding:0;margin:0;"><input id="11_input" class="selectbox" autocomplete="off" tabindex="0" style="width: 164px; font-family: 宋体; font-size: 12px; cursor: pointer;" type="text" contenteditable="false"></td><td class="ali01" style="border-style:none;;padding:0;margin:0;"><input value=" " class="selBtn" id="11_button" type="button"></td></tr></tbody></table><div id="11_container" class="selectbox-wrapper" hasfocus="0" style="display: none;"><ul><li id="11_input_none" class="selected">请选择</li><li id="11_input_all">全部</li><li id="11_input_1">判决书</li><li id="11_input_2">裁定书</li><li id="11_input_3">调解书</li><li id="11_input_4">决定书</li><li id="11_input_5">通知书</li><li id="11_input_6">批复</li><li id="11_input_7">答复</li><li id="11_input_8">函</li><li id="11_input_9">令</li><li id="11_input_10">其他</li></ul></div><div class="loader" style="display: none;">数据加载中...</div></div><select selwidth="188" name="undefined" class="quiselect" key="文书类型" sign="WSLX" type="list" condition="" truetype="select" style="display: none;" length="10" reltext="请选择" relvalue="none" finished="true" id="adsearch_WSLX"><option value="none">请选择</option><option value="all">全部</option><option value="1">判决书</option><option value="2">裁定书</option><option value="3">调解书</option><option value="4">决定书</option><option value="5">通知书</option><option value="6">批复</option><option value="7">答复</option><option value="8">函</option><option value="9">令</option><option value="10">其他</option><option value="none">请选择</option><option value="all">全部</option><option value="1">判决书</option><option value="2">裁定书</option><option value="3">调解书</option><option value="4">决定书</option><option value="5">通知书</option><option value="6">批复</option><option value="7">答复</option><option value="8">函</option><option value="9">令</option><option value="10">其他</option></select></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanCPRQ">裁判日期:</span></div><div class="fieldvalue"><input id="beginTimeCPRQ" sign="CPRQ" mark="timeSpan" value="" class="dateIcon" style="width:85px" type="text">-<input id="endTimeCPRQ" sign="CPRQ" value="" class="dateIcon" style="width:85px" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanSPRY">审判人员:</span></div><div class="fieldvalue"><input key="审判人员" sign="SPRY" style="width: 188px; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_SPRY" truetype="textinput" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanDSR">当事人:</span></div><div class="fieldvalue"><input key="当事人" sign="DSR" style="width: 188px; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_DSR" truetype="textinput" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanLS">律所:</span></div><div class="fieldvalue"><input key="律所" sign="LS" style="width: 188px; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_LS" truetype="textinput" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanLAWYER">律师:</span></div><div class="fieldvalue"><input key="律师" sign="LAWYER" style="width: 188px; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_LAWYER" truetype="textinput" type="text"></div></div><div class="list_maxli"><div class="fieldtitle"><span key="" cls="" pid="" id="spanFLYJ">法律依据:</span></div><div class="fieldvalue"><input key="法律依据" sign="FLYJ" style="width: 478px; background: rgb(255, 255, 255) url(&quot;/Assets/img/flyj_txt_bg.png&quot;) repeat-x scroll left top; font-family: 宋体; font-size: 12px;" class="quitype textinput" id="adsearch_FLYJ" truetype="textinput" type="text"></div></div><div class="list_searchbtn"><input id="list_btnmaxsearch" useminwidth="true" value="检索" class="button" style="font-family: 宋体; font-size: 12px;" type="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="list_btnmaxreset" useminwidth="true" value="重置" class="button" style="font-family: 宋体; font-size: 12px;" type="button"></div></div></div></div></div>
+                </div>
+            </div>
+            <div id="banner">
+            </div>
+        </div>
+        <div id="" class="contentMiddle">
+            <div id="contentStatistics" class="contentStatistics">
+                <div id="Statistics" class="index_Statistics">
+                    <div class="statistics_top">
+                        <div class="hot_top_1">
+                            <div class="hot_left t_1_h">
+                                <a style="background: rgba(0, 0, 0, 0) url(&quot;/Assets/img/Index/t_1.png&quot;) no-repeat scroll 0% 0%;"></a>
+                            </div>
+                            <div class="hot_right">
+                                <span>今日新增<br>
+                                    <label id="dayadd">17296篇</label>
+                                </span>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="hot_top_1">
+                            <div class="hot_left t_2_h">
+                                <a style="background: rgba(0, 0, 0, 0) url(&quot;/Assets/img/Index/t_2_h.png&quot;) no-repeat scroll 0% 0%;"></a>
+                            </div>
+                            <div class="hot_right">
+                                <span>文书总量<br>
+                                    <label id="doccount">50264394篇</label>
+                                </span>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="hot_top_1">
+                            <div class="hot_left t_3_h">
+                                <a style="background: rgba(0, 0, 0, 0) url(&quot;/Assets/img/Index/t_3.png&quot;) no-repeat scroll 0% 0%;"></a>
+                            </div>
+                            <div class="hot_right">
+                                <span>访问总量<br>
+                                    <label id="clickcount">18372653567次</label>
+                                </span>
+                            </div>
+                            <div class="clear">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="statistics_bottom" id="casetypecount"><ul><li class="index_licount"><span class="index_spliter"></span><span class="index_licountspan"><a href="/List/List?sorttype=1&amp;conditions=searchWord+1++刑事案件+案件类型:刑事案件" target="_blank">刑事文书6726051篇   </a><a></a></span></li><li class="index_licount"><span class="index_spliter"></span><span class="index_licountspan"><a href="/List/List?sorttype=1&amp;conditions=searchWord+1++民事案件+案件类型:民事案件" target="_blank">民事文书31987570篇   </a><a></a></span></li><li class="index_licount"><span class="index_spliter"></span><span class="index_licountspan"><a href="/List/List?sorttype=1&amp;conditions=searchWord+1++行政案件+案件类型:行政案件" target="_blank">行政文书1593056篇   </a><a></a></span></li><li class="index_licount"><span class="index_spliter"></span><span class="index_licountspan"><a href="/List/List?sorttype=1&amp;conditions=searchWord+1++赔偿案件+案件类型:赔偿案件" target="_blank">赔偿文书41395篇   </a><a></a></span></li><li class="index_licount"><span class="index_spliter"></span><span class="index_licountspan"><a href="/List/List?sorttype=1&amp;conditions=searchWord+1++执行案件+案件类型:执行案件" target="_blank">执行文书9789033篇   </a><a></a></span></li></ul></div>
+                </div>
+                <div id="idx_main" class="index_idx_main">
+                    <div class="nav_t">
+                        <div class="nav_b">
+                            <div class="img_1">
+                                <img src="/Assets/img/Index/nav_b.png" width="165" height="64" border="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="index_map_left">
+                        <div id="divChildCourt" class="index_divchildcourt">
+                            <div class="index_divchildcourt_top">
+                            </div>
+                            <div id="divChildCourtCon" class="index_divchildcourt_center">
+                            </div>
+                            <div class="index_divchildcourt_bottom">
+                            </div>
+                        </div>
+                        <div id="idx_map_content" class="index_map_content">
+                        	<div class="map_p map_p_beijing" _name="北京">北京</div>
+							<div class="map_p map_p_tianjin" _name="天津" style="">天津</div>
+							<div class="map_p map_p_shanghai" _name="上海">上海</div>
+							<div class="map_p map_p_chongqing" _name="重庆">重庆</div>
+							<div class="map_p map_p_hebei" _name="河北">河北</div>
+							<div class="map_p map_p_shanxi" _name="山西">山西</div>
+							<div class="map_p map_p_liaoning" _name="辽宁">辽&nbsp;&nbsp;宁</div>
+							<div class="map_p map_p_jilin" _name="吉林">吉&nbsp;&nbsp;林</div>
+							<div class="map_p map_p_heilongjiang" _name="黑龙江">黑龙江</div>
+							<div class="map_p map_p_jiangsu" _name="江苏">江苏</div>
+							<div class="map_p map_p_zhejiang" _name="浙江">浙江</div>
+							<div class="map_p map_p_anhui" _name="安徽">安徽</div>
+							<div class="map_p map_p_fujian" _name="福建">福建</div>
+							<div class="map_p map_p_jiangxi" _name="江西">江&nbsp;&nbsp;西</div>
+							<div class="map_p map_p_shandong" _name="山东">山&nbsp;&nbsp;东</div>
+							<div class="map_p map_p_henan" _name="河南">河&nbsp;&nbsp;南</div>
+							<div class="map_p map_p_hubei" _name="湖北">湖&nbsp;&nbsp;北</div>
+							<div class="map_p map_p_hunan" _name="湖南">湖&nbsp;&nbsp;南</div>
+							<div class="map_p map_p_guangdong" _name="广东">广&nbsp;&nbsp;东</div>
+							<div class="map_p map_p_hainan" _name="海南">海南</div>
+							<div class="map_p map_p_sichuan" _name="四川">四&nbsp;&nbsp;川</div>
+							<div class="map_p map_p_guizhou" _name="贵州">贵&nbsp;&nbsp;州</div>
+							<div class="map_p map_p_yunnan" _name="云南">云&nbsp;&nbsp;南</div>
+							<div class="map_p map_p_shanxi2" _name="陕西">陕&nbsp;&nbsp;西</div>
+							<div class="map_p map_p_gansu" _name="甘肃">甘肃</div>
+							<div class="map_p map_p_qinghai" _name="青海">青&nbsp;&nbsp;海</div>
+							<div class="map_p map_p_taiwan" _name="台湾">台湾</div>
+							<div class="map_p map_p_neimenggu" _name="内蒙古">内蒙古</div>
+							<div class="map_p map_p_guangxi" _name="广西">广&nbsp;&nbsp;西</div>
+							<div class="map_p map_p_xizang" _name="西藏">西&nbsp;&nbsp;藏</div>
+							<div class="map_p map_p_ningxia" _name="宁夏">宁夏</div>
+							<div class="map_p map_p_xinjiang" _name="新疆">新&nbsp;&nbsp;疆</div>
+							<div class="map_p map_p_aomen" _name="澳门">澳门</div>
+							<div class="map_p map_p_xianggang" _name="香港">香港</div>
+                        </div>
+                    </div>
+                    <div class="index_map_right">
+                        <div class="index_map_right_l">
+                        </div>
+                        <div class="index_map_right_r">
+                            <div class="map_x" style="background: rgba(0, 0, 0, 0) url(&quot;/Assets/img/Index/天津.png&quot;) no-repeat scroll 0% 0%;">
+                            </div>
+                            <div class="area">
+                                <h2>天津</h2>
+                            </div>
+                            <div class="proportion">
+                            </div>
+                            <div class="region"><ul><li key="001002000"><div class="index_divchildcourt_arrow"><a href="/List/List?sorttype=1&amp;conditions=searchWord+天津市高级人民法院+++高级法院:天津市高级人民法院" target="_blank">天津市高级人民法院</a></div></li><li key="001002001000"><div class="index_divchildcourt_arrow"><a href="/List/List?sorttype=1&amp;conditions=searchWord+天津市第一中级人民法院+++中级法院:天津市第一中级人民法院" target="_blank">天津市第一中级人民法院</a></div></li><li key="001002002000"><div class="index_divchildcourt_arrow"><a href="/List/List?sorttype=1&amp;conditions=searchWord+天津市第二中级人民法院+++中级法院:天津市第二中级人民法院" target="_blank">天津市第二中级人民法院</a></div></li><li key="001002003000"><div class="index_divchildcourt_arrow"><a href="/List/List?sorttype=1&amp;conditions=searchWord+天津海事法院+++中级法院:天津海事法院" target="_blank">天津海事法院</a></div></li><li key="001002004000"><div class="index_divchildcourt_arrow"><a href="/List/List?sorttype=1&amp;conditions=searchWord+天津铁路运输法院+++中级法院:天津铁路运输法院" target="_blank">天津铁路运输法院</a></div></li></ul></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="/Assets/js/Lawyee.CPWSW.PageFooter.js" type="text/javascript"></script> <div id="bottom" class="bottom"> <div class="container containerFisrt">   |<a href="http://govinfo.nlc.gov.cn" target="_blank">中国政府公开信息整合服务平台</a>|<a href="http://www.ajxxgk.jcy.cn/html/index.html" target="_blank">人民检察院案件信息公开网</a>|  </div>   <div class="container">        |<a href="http://www.court.gov.cn/zgsplcxxgkw/" target="_blank">中国审判流程信息公开网</a>|<a href="http://shixin.court.gov.cn" target="_blank">中国执行信息公开网</a>|<a href="http://www.ccmt.org.cn" target="_blank">中国涉外商事海事审判网</a>|<a href="http://www.court.gov.cn/qgfyjxjszyjwzxxxw/" target="_blank">全国法院减刑、假释、暂予监外执行信息网</a>|    </div> <div style="height:15px;"></div>  <div class="container3">       地址：北京市东城区东交民巷27号&nbsp;&nbsp;&nbsp;&nbsp;邮编：100745&nbsp;&nbsp;&nbsp;&nbsp;总机：010-67550114&nbsp;&nbsp;&nbsp;&nbsp;  </div>   <div class="container3">      中华人民共和国最高人民法院 版权所有<p></p>   </div>   <div class="container3">       京ICP备05023036号   </div> </div>
+        </div>
+        <div id="divtdc" class="divcontent_comment display_none" style="top: 25%; left: 35%; width: 400px; height: 380px; background-color: rgb(255, 255, 255); z-index: 99999;">
+         <div class="content_comment_head"><table><tbody><tr><td class="info">APP二维码</td><td class="close"><img style="cursor: pointer;" onclick=" $('#divtdc').hide();" alt="点击关闭二维码扫描" src="/Assets/img/content/content_comment_close.png"></td></tr></tbody></table></div><div class="content_comment_body"><div id="tdcApp" style="height: 200px; width: 200px; margin: 20px 50px; text-align: center;"><img src="/MobilePage/images/cpwswApp.png" heigth="300px" width="300px"></div></div></div>
+          <div id="dialog"> 
+                <div> 
+                    <input class="button" id="btn_yzmsure" value="确定" style="font-family: 宋体; font-size: 12px;" type="button"><table>
+                       <tbody><tr>
+                           <td>
+                               <input class="textinput" id="txtValidateCode" truetype="textinput" style="font-family: 宋体; font-size: 12px;" type="text">
+                               <img alt="点击刷新验证码！" name="validateCode" style="cursor: pointer;">
+                           </td>
+                       </tr>
+                       <tr> </tr>
+                    </tbody></table>
+                </div>  
+    </div>
+    </div>
+
+
+<span id="btc" style="position: absolute; z-index: 9999;"></span><div id="cursorMessageDiv" style="display: none;">&nbsp;</div></body></html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>
+		<base href="http://210.82.32.100:8081/FLFG/">
+
+		<title>中国法律法规信息库</title>
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+		<meta http-equiv="description" content="This is my page">
+		<link href="http://210.82.32.100:8081/FLFG/css/index.css" rel="stylesheet" type="text/css">
+		<script src="http://210.82.32.100:8081/FLFG/js/jquery-1.6.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://210.82.32.100:8081/FLFG/js/areaData.js"></script>
+		<script type="text/javascript">
+		/*
+		*选项卡效果
+		*id：当前层id
+		*m：当前层序号
+		*n：所有的个数 
+		*on：打开样式
+		*off：关闭样式 
+		*/	 
+		function showOrNonDivClass(id,m,n,on,off){ 
+			for( var i=1;i<=n;i++){ 
+			    //控制标题
+				var menu = document.getElementById(id + i); 
+				menu.className = i==m ?on:off; 
+				//控制内容
+				
+				var showContent = document.getElementById(id+"_content"+i); 
+				showContent.style.display = i==m?"block":"none"; 
+			} 
+		} 
+
+		function goMore(zlsx,bmfl,zdjg,txtid){ 
+			document.getElementById("zlsxid").value=zlsx;
+			document.getElementById("bmflid").value=bmfl;
+			document.getElementById("zdjg").value=zdjg;
+			document.getElementById("txtid").value=txtid;
+			document.getElementById("keyword").value="";
+			document.forms.myform.submit();
+		} 
+		
+	function jiansuo() {
+		var keyword = validate(document.getElementById("keyword").value);
+		//keyword = validate(keyword);
+		if (keyword.length <2){
+			alert("有效检索词至少输入两个字！");
+			return;
+		} else {
+			document.getElementById("keyword").value = keyword;
+		}
+		document.getElementById("zlsxid").value = "";
+		document.getElementById("bmflid").value = "";
+		document.getElementById("zdjg").value = "";
+		document.getElementById("txtid").value = "";
+		document.forms.myform.submit();
+	}
+	document.onkeydown = function(event) {
+		var e = event || window.event || arguments.callee.caller.arguments[0];
+		if (e && e.keyCode == 13) { // enter 键
+			jiansuo();
+		}
+	};
+	function validate(keyword) {
+		var pattern = new RegExp(
+				"[%--`~!@#$^&*()=|{}':;',\\[\\]\\\\.<>/?~！@#￥……&*（）——|{}【】‘；：”“'。，、？]"); //格式 RegExp("[在中间定义特殊过滤字符]")  
+
+		var rs = "";
+		for ( var i = 0; i < keyword.length; i++) {
+			rs = rs + keyword.substr(i, 1).replace(pattern, '');
+		}
+		return rs;
+	}
+	function keydown(){
+		 var thisVal=$("#keyword").val();
+	     //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+	     if(thisVal!=""){
+	       $("#text_span").hide();
+	      }else{
+	         $("#text_span").show();
+	      }	
+		}
+		function keyup(){
+		var thisVal=$("#keyword").val();
+	     //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+	    if(thisVal!=""){
+	       $("#text_span").hide();
+	      }else{
+	         $("#text_span").show();
+	      }
+		}
+	  function gjsearch(){
+		 window.open("http://210.82.32.100:8081/FLFG/gjSearch.action");
+	   // window.location.href="http://localhost:8080/T_FLFG/gjSearch.action";
+	  }
+	  var basePath="http://210.82.32.100:8081/FLFG/";
+	 $(function(){
+		keydown();
+	 	keyup();
+	 	getAreaData("xfsd");
+	 	getAreaData("01");
+	 	getAreaData("02");
+	 	getAreaData("04");
+	 	getAreaData("06");
+	 	getAreaData("03");
+
+	  })
+	  
+	//   function showNav(){
+    //  document.getElementById("nav-list").style.display='block';
+	 // }
+	// function hideNav(){
+    //  document.getElementById("nav-list").style.display='none';
+	//  } 
+	  
+	
+  function getAreaData(areaId,key){
+ 
+	 $.ajax({
+			type:"post",	
+			axnyc:false,
+			dateType:"json",
+			url:"http://210.82.32.100:8081/FLFG/newIndex",
+			data:{"areaId":areaId},//参数
+			success:function(result){//返回数据根据结果进行相应处理
+			
+				var jsonObj=eval('('+result+')');	
+				$.each(jsonObj,function(key,value){
+				var html="";
+				if(areaId=="xfsd") html=getXFSD(value);
+				else if(areaId=="01") html=getXFFL(value);
+				else if(areaId=="02"||areaId=="04") html=getXFFL_0204(value);
+				else if(areaId=="06") html=getSFJS(value);
+				else if(areaId=="03") html=getDFFG(value);
+				$("#"+key).html(html);
+				});	
+						
+		    }
+	});
+  }  
+  
+</script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="content">
+				<div id="header">
+					<div id="header_logo">
+						<img alt="" src="http://210.82.32.100:8081/FLFG/imgs/top.png">
+					</div>
+					<div class="nav">
+						<a href="http://www.npc.gov.cn/" target="_blank">首页</a>
+						<!--  <a class="relative"  href="javascript:goMore('01','','','');">宪法法律-->
+						<a class="relative" href="#">宪法法律
+							<!-- 下拉菜单 -->
+						<div id="nav-list" class="nav-list">
+							<span class="blue" style="cursor: pointer;" onclick="window.location.href='http://210.82.32.100:8081/FLFG/index/xianfamore.jsp'">宪法</span>
+								<!--
+								onclick="javascript:goMore('01','0','xianfa','')">宪法</span>
+							-->
+							<span class="blue" style="cursor: pointer;" onclick="goMore('01','01','','1')">宪法相关法</span>
+							<!--  <span class="blue" style="cursor: pointer;"
+								onclick="goMore('01','01','','')">宪法相关法</span>-->	
+							<span class="blue" style="cursor: pointer;" onclick="goMore('01','02','','')">民法商法</span>
+							<span class="blue" style="cursor: pointer;" onclick="goMore('01','03','','')">行政法</span>
+							<span class="blue" style="cursor: pointer;" onclick="goMore('01','04','','')">经济法</span>
+							<span class="blue" style="cursor: pointer;" onclick="goMore('01','05','','')">社会法</span>
+							<span class="blue" style="cursor: pointer;" onclick="window.location.href='http://210.82.32.100:8081/FLFG/index/xingfamore.jsp'" )"="">刑法</span><!--
+								onclick="javascript:goMore('01','06','xingfa','')">刑法</span>
+							--><span class="blue" style="cursor: pointer;" onclick="goMore('01','07','','')">诉讼与非诉讼程序法</span>
+						</div>
+						</a>
+					
+						<a class="refirstcol" href="javascript:goMore('02','','','');">行政法规及文件</a>
+						<a class="refirstcol" href="javascript:goMore('04','','','');">部委规章及文件</a>
+						<a class="refirstcol" href="javascript:goMore('06','','','');">司法解释及文件</a>
+						<a class="refirstcol" href="javascript:goMore('03','','','');">地方性法规规章</a>
+						<a class="refirstcol" href="javascript:goMore('08','','','');">修正案</a>
+						<a class="refirstcol" href="javascript:goMore('09','','','');">法律解释</a>
+						<!-- <a class="jd" href="javascript:goMore('99','','','');">决定  -->
+						<a class="jd" href="javascript:goMore('99','','','');">决定 
+							<!-- 下拉菜单 -->
+						<div class="jd-list">
+							<span class="blue" style="cursor: pointer;" onclick="goMore('10','','','')">有关法律问题的决定</span>
+							<span class="blue" style="cursor: pointer;" onclick="goMore('11','','','')">关于修改批准废止法律的决定</span>
+							<span class="blue" style="cursor: pointer;" onclick="goMore('12','','','')">关于批准缔结条约的决定</span>
+						</div>
+						</a>
+						
+						<div class="clearfix"></div>
+					</div>
+					<div class="clear"></div>
+
+					<form action="http://210.82.32.100:8081/FLFG/ksjsCateGroup.action" method="post" name="myform" target="_blank">
+
+						<div id="header_search">
+
+							<div id="search_body">
+								<label id="text_label">
+									<span id="text_span">请输入标题或正文内容</span>
+									<input type="text" class="txt" name="keyword" id="keyword" onkeydown="keydown()" onkeyup="keyup()" value="">
+									<input type="button" value="  检  索 " class="btn" onclick="jiansuo()">
+									<input type="hidden" name="zlsxid" id="zlsxid" value="">
+									<input type="hidden" name="bmflid" id="bmflid" value="">
+									<input type="hidden" name="zdjg" id="zdjg" value="">
+									<input type="hidden" name="txtid" id="txtid" value="">
+									&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="http://210.82.32.100:8081/FLFG/gjSearch.action" style="color: white;" target="_blank">高级检索</a>
+
+
+								</label>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<!-- 内容主体 -->
+			<div id="main">
+				<div class="cloumn" style="margin-bottom: 10px;">
+					<!-- 类别 -->
+					<div class="cloumntitle">
+						<div class="centertitle">
+							新法速递
+						</div>
+						<div class="righttitle">
+							<a href="javascript:goMore('','','新法速递','')">更多</a>
+						</div>
+					</div>
+					<!-- 新法条目 -->
+					<div class="cloumn_nr" id="xfsd"><div class="leftsider"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37603166&amp;zlsxid=" title="全国人民代表大会常务委员会关于全面加强生态环境保护 依法推动打好污染防治攻坚战的决议" target="_blank">全国人民代表大会常务委员会关于全面加强生态环境保护 依法推...</a></div><div class="cloumnsec_content_right"><span>[2018/07/10]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37547384&amp;zlsxid=10" title="全国人民代表大会常务委员会关于中国海警局行使海上维权执法职权的决定" target="_blank">全国人民代表大会常务委员会关于中国海警局行使海上维权执法职...</a></div><div class="cloumnsec_content_right"><span>[2018/06/22]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37547342&amp;zlsxid=10" title="全国人民代表大会常务委员会关于全国人民代表大会宪法和法律委员会职责问题的决定" target="_blank">全国人民代表大会常务委员会关于全国人民代表大会宪法和法律委...</a></div><div class="cloumnsec_content_right"><span>[2018/06/22]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37416210&amp;zlsxid=01" title="中华人民共和国英雄烈士保护法" target="_blank">中华人民共和国英雄烈士保护法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37416240&amp;zlsxid=10" title="全国人民代表大会常务委员会关于国务院机构改革涉及法律规定的行政机关职责调整问题的决定" target="_blank">全国人民代表大会常务委员会关于国务院机构改革涉及法律规定的...</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37416354&amp;zlsxid=10" title="全国人民代表大会常务委员会关于设立上海金融法院的决定" target="_blank">全国人民代表大会常务委员会关于设立上海金融法院的决定</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37416254&amp;zlsxid=01" title="中华人民共和国人民陪审员法" target="_blank">中华人民共和国人民陪审员法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532098&amp;zlsxid=01" title="中华人民共和国进出口商品检验法" target="_blank">中华人民共和国进出口商品检验法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div></div><div class="rightsider"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532068&amp;zlsxid=01" title="中华人民共和国反恐怖主义法" target="_blank">中华人民共和国反恐怖主义法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532078&amp;zlsxid=01" title="中华人民共和国国境卫生检疫法" target="_blank">中华人民共和国国境卫生检疫法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532108&amp;zlsxid=01" title="中华人民共和国国防教育法" target="_blank">中华人民共和国国防教育法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532088&amp;zlsxid=01" title="中华人民共和国国家情报法" target="_blank">中华人民共和国国家情报法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532058&amp;zlsxid=01" title="中华人民共和国精神卫生法" target="_blank">中华人民共和国精神卫生法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37416340&amp;zlsxid=11" title="全国人民代表大会常务委员会关于修改《中华人民共和国国境卫生检疫法》等六部法律的决定" target="_blank">全国人民代表大会常务委员会关于修改《中华人民共和国国境卫生...</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37326268&amp;zlsxid=01" title="中华人民共和国监察法" target="_blank">中华人民共和国监察法</a></div><div class="cloumnsec_content_right"><span>[2018/03/20]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37326216&amp;zlsxid=01" title="中华人民共和国宪法" target="_blank">中华人民共和国宪法</a></div><div class="cloumnsec_content_right"><span>[2018/03/11]</span></div></div></div></div>
+				</div>
+				<div class="cloumn">
+					<div class="cloumntitle">
+						<div class="centertitle">
+							宪法法律
+						</div>
+					</div>
+
+					<div class="cloumn_nr">
+
+						<div class="leftsider">
+
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px;">
+									<span>宪法</span>
+								</div>
+								<div style="float: left; text-align: center; width: 30px; padding-right: 5px;">
+									<a target="_blank" href="http://210.82.32.100:8081/FLFG/index/xianfamore.jsp">更多</a>
+									<!--<a href="javascript:goMore('01','0','xianfa','')">更多</a>-->
+								</div>
+							</div>
+							<div id="01_0" style="width: 100%; height: 200px;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37326216&amp;zlsxid=01" title="中华人民共和国宪法" target="_blank">中华人民共和国宪法</a></div><div class="cloumnsec_content_right"><span>[2018/03/11]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37291566&amp;zlsxid=08" title="中华人民共和国宪法修正案" target="_blank">中华人民共和国宪法修正案</a></div><div class="cloumnsec_content_right"><span>[2018/03/11]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37257858&amp;zlsxid=10" title="全国人民代表大会常务委员会关于实行宪法宣誓制度的决定(2018修订)" target="_blank">全国人民代表大会常务委员会关于实行宪法宣誓制度的决定(20...</a></div><div class="cloumnsec_content_right"><span>[2018/02/24]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34964926&amp;zlsxid=10" title="全国人民代表大会常务委员会关于实行宪法宣誓制度的决定" target="_blank">全国人民代表大会常务委员会关于实行宪法宣誓制度的决定</a></div><div class="cloumnsec_content_right"><span>[2015/07/01]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34496476&amp;zlsxid=10" title="全国人民代表大会常务委员会关于设立国家宪法日的决定" target="_blank">全国人民代表大会常务委员会关于设立国家宪法日的决定</a></div><div class="cloumnsec_content_right"><span>[2014/11/01]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=106988&amp;zlsxid=08" title="中华人民共和国宪法修正案" target="_blank">中华人民共和国宪法修正案</a></div><div class="cloumnsec_content_right"><span>[2004/03/14]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=991001&amp;zlsxid=01" title="中华人民共和国宪法(2004修正)" target="_blank">中华人民共和国宪法(2004修正)</a></div><div class="cloumnsec_content_right"><span>[2004/03/14]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=290&amp;zlsxid=08" title="中华人民共和国宪法修正案" target="_blank">中华人民共和国宪法修正案</a></div><div class="cloumnsec_content_right"><span>[1999/03/15]</span></div></div></div>
+
+
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px;">
+									<span>民法商法</span>
+								</div>
+								<div style="float: left; text-align: center; width: 30px; padding-right: 5px;">
+									<a href="javascript:goMore('01','02','','')">更多</a>
+								</div>
+							</div>
+							<!-- 民法商法 -->
+							<div id="01_02" style="width: 100%; height: 200px;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37167914&amp;zlsxid=01" title="中华人民共和国招标投标法" target="_blank">中华人民共和国招标投标法</a></div><div class="cloumnsec_content_right"><span>[2017/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37148480&amp;zlsxid=01" title="中华人民共和国船舶吨税法" target="_blank">中华人民共和国船舶吨税法</a></div><div class="cloumnsec_content_right"><span>[2017/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37072580&amp;zlsxid=01" title="中华人民共和国中外合作经营企业法" target="_blank">中华人民共和国中外合作经营企业法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36415366&amp;zlsxid=01" title="中华人民共和国民法总则" target="_blank">中华人民共和国民法总则</a></div><div class="cloumnsec_content_right"><span>[2017/03/15]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35942884&amp;zlsxid=01" title="中华人民共和国外资企业法" target="_blank">中华人民共和国外资企业法</a></div><div class="cloumnsec_content_right"><span>[2016/09/03]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35942860&amp;zlsxid=01" title="中华人民共和国中外合资经营企业法" target="_blank">中华人民共和国中外合资经营企业法</a></div><div class="cloumnsec_content_right"><span>[2016/09/03]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35289250&amp;zlsxid=01" title="中华人民共和国商业银行法" target="_blank">中华人民共和国商业银行法</a></div><div class="cloumnsec_content_right"><span>[2015/08/29]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34969216&amp;zlsxid=01" title="中华人民共和国电子签名法" target="_blank">中华人民共和国电子签名法</a></div><div class="cloumnsec_content_right"><span>[2015/04/24]</span></div></div></div>
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px;">
+									<span>经济法</span>
+								</div>
+								<div style="float: left; text-align: center; width: 30px; padding-right: 5px;">
+									<a href="javascript:goMore('01','04','','')">更多</a>
+								</div>
+							</div>
+							<div id="01_04" style="width: 100%; height: 200px;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532098&amp;zlsxid=01" title="中华人民共和国进出口商品检验法" target="_blank">中华人民共和国进出口商品检验法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37148348&amp;zlsxid=01" title="中华人民共和国农民专业合作社法" target="_blank">中华人民共和国农民专业合作社法</a></div><div class="cloumnsec_content_right"><span>[2017/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37148414&amp;zlsxid=01" title="中华人民共和国烟叶税法" target="_blank">中华人民共和国烟叶税法</a></div><div class="cloumnsec_content_right"><span>[2017/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37167924&amp;zlsxid=01" title="中华人民共和国计量法" target="_blank">中华人民共和国计量法</a></div><div class="cloumnsec_content_right"><span>[2017/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37009578&amp;zlsxid=01" title="中华人民共和国反不正当竞争法" target="_blank">中华人民共和国反不正当竞争法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37009554&amp;zlsxid=01" title="中华人民共和国标准化法" target="_blank">中华人民共和国标准化法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37072570&amp;zlsxid=01" title="中华人民共和国民用航空法" target="_blank">中华人民共和国民用航空法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37072590&amp;zlsxid=01" title="中华人民共和国港口法" target="_blank">中华人民共和国港口法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div></div>
+
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px;">
+									<span>刑法</span>
+								</div>
+								<div style="float: left; text-align: center; width: 30px; padding-right: 5px;">
+									<a target="_blank" href="http://210.82.32.100:8081/FLFG/index/xingfamore.jsp">更多</a>
+									
+									
+								</div>
+							</div>
+							<div id="01_06" style="width: 100%; height: 200px;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37009510&amp;zlsxid=08" title="中华人民共和国刑法修正案(十)" target="_blank">中华人民共和国刑法修正案(十)</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35091146&amp;zlsxid=08" title="中华人民共和国刑法修正案(九)" target="_blank">中华人民共和国刑法修正案(九)</a></div><div class="cloumnsec_content_right"><span>[2015/08/29]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34013052&amp;zlsxid=09" title="全国人民代表大会常务委员会关于《中华人民共和国刑法》第三百四十一条、第三百一十二条的解释" target="_blank">全国人民代表大会常务委员会关于《中华人民共和国刑法》第三百...</a></div><div class="cloumnsec_content_right"><span>[2014/04/24]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34013094&amp;zlsxid=09" title="全国人民代表大会常务委员会关于《中华人民共和国刑法》第二百六十六条的解释" target="_blank">全国人民代表大会常务委员会关于《中华人民共和国刑法》第二百...</a></div><div class="cloumnsec_content_right"><span>[2014/04/24]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34013038&amp;zlsxid=09" title="全国人民代表大会常务委员会关于《中华人民共和国刑法》第一百五十八条、第一百五十九条的解释" target="_blank">全国人民代表大会常务委员会关于《中华人民共和国刑法》第一百...</a></div><div class="cloumnsec_content_right"><span>[2014/04/24]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34013024&amp;zlsxid=09" title="全国人民代表大会常务委员会关于《中华人民共和国刑法》第三十条的解释" target="_blank">全国人民代表大会常务委员会关于《中华人民共和国刑法》第三十...</a></div><div class="cloumnsec_content_right"><span>[2014/04/24]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=29696726&amp;zlsxid=08" title="中华人民共和国刑法修正案(八)" target="_blank">中华人民共和国刑法修正案(八)</a></div><div class="cloumnsec_content_right"><span>[2011/02/25]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=239&amp;zlsxid=01" title="中华人民共和国刑法（修订）" target="_blank">中华人民共和国刑法（修订）</a></div><div class="cloumnsec_content_right"><span>[1997/03/14]</span></div></div></div>
+
+							<div class="cloumnsec_title_left1">
+								<div class="cloumnsec_content_left1">
+									<div style="float: left; padding-left: 10px; width: 420px; line-height: 31px; font-size: 14px; font-weight: bold;">
+										行政法规及文件
+									</div>
+									<div style="float: left; text-align: center; float: left; text-align: center; width: 33px;">
+										<a href="javascript:goMore('02','','','')">更多</a>
+									</div>
+								</div>
+							</div>
+							<!-- 行政法规及文件 -->
+							<div id="02" style="width: 488px; height: 200px; padding-top: 10px; border-right: 1px solid #e1e1e1; border-bottom: 1px solid #e1e1e1;"><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37185738&amp;zlsxid=02" title="食盐专营办法" target="_blank">食盐专营办法</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/12/26]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37167856&amp;zlsxid=02" title="中华人民共和国环境保护税法实施条例" target="_blank">中华人民共和国环境保护税法实施条例</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/12/25]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37204070&amp;zlsxid=02" title="国务院关于修改《行政法规制定程序条例》的决定　附：修正本" target="_blank">国务院关于修改《行政法规制定程序条例》的决定　附：修正本</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/12/22]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37204056&amp;zlsxid=02" title="国务院关于修改《规章制定程序条例》的决定　附：修正本" target="_blank">国务院关于修改《规章制定程序条例》的决定　附：修正本</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/12/22]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37091612&amp;zlsxid=02" title="中华人民共和国反间谍法实施细则" target="_blank">中华人民共和国反间谍法实施细则</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/11/22]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37073294&amp;zlsxid=02" title="中华人民共和国增值税暂行条例" target="_blank">中华人民共和国增值税暂行条例</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/11/19]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37073280&amp;zlsxid=02" title="国务院关于废止《中华人民共和国营业税暂行条例》和修改《中华人民共和国增值税暂行条例》的决定" target="_blank">国务院关于废止《中华人民共和国营业税暂行条例》和修改《中...</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/11/19]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37073242&amp;zlsxid=02" title="国务院关于修改部分行政法规的决定" target="_blank">国务院关于修改部分行政法规的决定</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/11/17]</span></div></div></div>
+						</div>
+
+						<div class="rightsider">
+
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px;">
+									<span>宪法相关法</span>
+								</div>
+								<div style="float: left; width: 30px; text-align: center;">
+									<a href="javascript:goMore('01','01','','1')">更多</a>
+								</div>
+							</div>
+							<!-- 宪法相关法 -->
+							<div id="01_01" style="width: 100%; height: 200px; overflow: hidden;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37416210&amp;zlsxid=01" title="中华人民共和国英雄烈士保护法" target="_blank">中华人民共和国英雄烈士保护法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37416254&amp;zlsxid=01" title="中华人民共和国人民陪审员法" target="_blank">中华人民共和国人民陪审员法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36857028&amp;zlsxid=01" title="中华人民共和国国歌法" target="_blank">中华人民共和国国歌法</a></div><div class="cloumnsec_content_right"><span>[2017/09/01]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36937312&amp;zlsxid=01" title="中华人民共和国检察官法" target="_blank">中华人民共和国检察官法</a></div><div class="cloumnsec_content_right"><span>[2017/09/01]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36937302&amp;zlsxid=01" title="中华人民共和国法官法" target="_blank">中华人民共和国法官法</a></div><div class="cloumnsec_content_right"><span>[2017/09/01]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35320560&amp;zlsxid=01" title="中华人民共和国国家勋章和国家荣誉称号法" target="_blank">中华人民共和国国家勋章和国家荣誉称号法</a></div><div class="cloumnsec_content_right"><span>[2015/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35091102&amp;zlsxid=01" title="中华人民共和国地方各级人民代表大会和地方各级人民政府组织法" target="_blank">中华人民共和国地方各级人民代表大会和地方各级人民政府组织法</a></div><div class="cloumnsec_content_right"><span>[2015/08/29]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35091122&amp;zlsxid=01" title="中华人民共和国全国人民代表大会和地方各级人民代表大会代表法" target="_blank">中华人民共和国全国人民代表大会和地方各级人民代表大会代表法</a></div><div class="cloumnsec_content_right"><span>[2015/08/29]</span></div></div></div>
+
+
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px">
+									<span>行政法</span>
+								</div>
+								<div style="float: left; width: 30px; text-align: center;">
+									<a href="javascript:goMore('01','03','','')">更多</a>
+								</div>
+							</div>
+							<div id="01_03" style="width: 100%; height: 200px; overflow: hidden;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532068&amp;zlsxid=01" title="中华人民共和国反恐怖主义法" target="_blank">中华人民共和国反恐怖主义法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532078&amp;zlsxid=01" title="中华人民共和国国境卫生检疫法" target="_blank">中华人民共和国国境卫生检疫法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532108&amp;zlsxid=01" title="中华人民共和国国防教育法" target="_blank">中华人民共和国国防教育法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532088&amp;zlsxid=01" title="中华人民共和国国家情报法" target="_blank">中华人民共和国国家情报法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37532058&amp;zlsxid=01" title="中华人民共和国精神卫生法" target="_blank">中华人民共和国精神卫生法</a></div><div class="cloumnsec_content_right"><span>[2018/04/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37326268&amp;zlsxid=01" title="中华人民共和国监察法" target="_blank">中华人民共和国监察法</a></div><div class="cloumnsec_content_right"><span>[2018/03/20]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37009344&amp;zlsxid=01" title="中华人民共和国公共图书馆法" target="_blank">中华人民共和国公共图书馆法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37072546&amp;zlsxid=01" title="中华人民共和国母婴保健法" target="_blank">中华人民共和国母婴保健法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div></div>
+
+
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px">
+									<span>社会法</span>
+								</div>
+								<div style="float: left; width: 30px; text-align: center;">
+									<a href="javascript:goMore('01','05','','')">更多</a>
+								</div>
+							</div>
+							<div id="01_05" style="width: 100%; height: 200px; overflow: hidden;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37072600&amp;zlsxid=01" title="中华人民共和国职业病防治法" target="_blank">中华人民共和国职业病防治法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37072650&amp;zlsxid=01" title="中华人民共和国境外非政府组织境内活动管理法" target="_blank">中华人民共和国境外非政府组织境内活动管理法</a></div><div class="cloumnsec_content_right"><span>[2017/11/04]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36385300&amp;zlsxid=01" title="中华人民共和国红十字会法" target="_blank">中华人民共和国红十字会法</a></div><div class="cloumnsec_content_right"><span>[2017/02/24]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35767532&amp;zlsxid=01" title="中华人民共和国野生动物保护法" target="_blank">中华人民共和国野生动物保护法</a></div><div class="cloumnsec_content_right"><span>[2016/07/02]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35476014&amp;zlsxid=01" title="中华人民共和国慈善法" target="_blank">中华人民共和国慈善法</a></div><div class="cloumnsec_content_right"><span>[2016/03/16]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35320618&amp;zlsxid=01" title="中华人民共和国反家庭暴力法" target="_blank">中华人民共和国反家庭暴力法</a></div><div class="cloumnsec_content_right"><span>[2015/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34969334&amp;zlsxid=01" title="中华人民共和国就业促进法" target="_blank">中华人民共和国就业促进法</a></div><div class="cloumnsec_content_right"><span>[2015/04/24]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34969436&amp;zlsxid=01" title="中华人民共和国老年人权益保障法" target="_blank">中华人民共和国老年人权益保障法</a></div><div class="cloumnsec_content_right"><span>[2015/04/24]</span></div></div></div>
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px">
+									<span>诉讼及非诉讼程序法</span>
+								</div>
+								<div style="float: left; width: 30px; text-align: center;">
+									<a href="javascript:goMore('01','07','','')">更多</a>
+								</div>
+							</div>
+							<div id="01_07" style="width: 100%; height: 200px; overflow: hidden;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36937322&amp;zlsxid=01" title="中华人民共和国仲裁法" target="_blank">中华人民共和国仲裁法</a></div><div class="cloumnsec_content_right"><span>[2017/09/01]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36698842&amp;zlsxid=01" title="中华人民共和国民事诉讼法" target="_blank">中华人民共和国民事诉讼法</a></div><div class="cloumnsec_content_right"><span>[2017/06/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36698822&amp;zlsxid=01" title="中华人民共和国行政诉讼法" target="_blank">中华人民共和国行政诉讼法</a></div><div class="cloumnsec_content_right"><span>[2017/06/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=32144802&amp;zlsxid=01" title="全国人民代表大会关于修改《中华人民共和国刑事诉讼法》的决定　附：修正本" target="_blank">全国人民代表大会关于修改《中华人民共和国刑事诉讼法》的决定...</a></div><div class="cloumnsec_content_right"><span>[2012/03/14]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=28648604&amp;zlsxid=01" title="中华人民共和国人民调解法" target="_blank">中华人民共和国人民调解法</a></div><div class="cloumnsec_content_right"><span>[2010/08/28]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=277044&amp;zlsxid=01" title="中华人民共和国农村土地承包经营纠纷调解仲裁法" target="_blank">中华人民共和国农村土地承包经营纠纷调解仲裁法</a></div><div class="cloumnsec_content_right"><span>[2009/06/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=252270&amp;zlsxid=01" title="中华人民共和国劳动争议调解仲裁法" target="_blank">中华人民共和国劳动争议调解仲裁法</a></div><div class="cloumnsec_content_right"><span>[2007/12/29]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=339&amp;zlsxid=01" title="中华人民共和国引渡法" target="_blank">中华人民共和国引渡法</a></div><div class="cloumnsec_content_right"><span>[2000/12/28]</span></div></div></div>
+
+							<div class="cloumnsec_title_left1">
+								<div class="cloumnsec_content_left1">
+									<div style="float: left; padding-left: 10px; width: 420px; line-height: 31px; font-size: 14px; font-weight: bold;">
+										部委规章及文件
+									</div>
+									<div style="float: left; text-align: center; float: left; text-align: center; width: 33px;">
+										<a href="javascript:goMore('04','','','')">更多</a>
+									</div>
+								</div>
+							</div>
+							<div id="04" style="width: 487px; height: 200px; padding-top: 10px; border-right: 1px solid #e1e1e1; border-left: 1px solid #e1e1e1; border-bottom: 1px solid #e1e1e1;"><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36411270&amp;zlsxid=04" title="国家知识产权局关于修改《关于规范专利申请行为的若干规定》的决定" target="_blank">国家知识产权局关于修改《关于规范专利申请行为的若干规定》...</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/02/28]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36411284&amp;zlsxid=04" title="国家知识产权局关于修改《专利审查指南》的决定" target="_blank">国家知识产权局关于修改《专利审查指南》的决定</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/02/28]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36410966&amp;zlsxid=04" title="专业技术人员资格考试违纪违规行为处理规定" target="_blank">专业技术人员资格考试违纪违规行为处理规定</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/02/16]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36360796&amp;zlsxid=04" title="普通高等学校学生管理规定" target="_blank">普通高等学校学生管理规定</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/02/04]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36384874&amp;zlsxid=04" title="体外诊断试剂注册管理办法修正案" target="_blank">体外诊断试剂注册管理办法修正案</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/01/25]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36338992&amp;zlsxid=04" title="医疗器械召回管理办法" target="_blank">医疗器械召回管理办法</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/01/25]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36410568&amp;zlsxid=04" title="中国保险监督管理委员会行政处罚程序规定" target="_blank">中国保险监督管理委员会行政处罚程序规定</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/01/25]</span></div></div><div class="cloumnsec_content"><div style="*width:400px !important;width: 77%;float: left;"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36410442&amp;zlsxid=04" title="交通运输部关于修改《小型航空器商业运输运营人运行合格审定规则》的决定　附：修正本" target="_blank">交通运输部关于修改《小型航空器商业运输运营人运行合格审定...</a></div><div style="*width:63px !important; width: 20%;float: left; text-align: right;box-sizing:border-box; padding-right: 10px;"><span>[2017/01/23]</span></div></div></div>
+						</div>
+					</div>
+				</div>
+				<div class="cloumn" style="margin-top: 10px">
+					<div class="cloumntitle">
+						<div class="centertitle">
+							司法解释及文件
+						</div>
+					</div>
+					<div class="cloumn_nr">
+						<div class="leftsider">
+
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px">
+									<span>法院</span>
+								</div>
+								<div style="float: left; width: 30px; text-align: center;">
+									<a href="javascript:goMore('06','','3','')">更多</a>
+								</div>
+							</div>
+							<div id="06_02" style="width: 100%; height: 200px;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37241916&amp;zlsxid=06" title="最高人民法院关于审理涉及夫妻债务纠纷案件适用法律有关问题的解释" target="_blank">最高人民法院关于审理涉及夫妻债务纠纷案件适用法律有关问题的...</a></div><div class="cloumnsec_content_right"><span>[2018/01/16]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37168046&amp;zlsxid=06" title="最高人民法院关于审理海洋自然资源与生态环境损害赔偿纠纷案件若干问题的规定" target="_blank">最高人民法院关于审理海洋自然资源与生态环境损害赔偿纠纷案件...</a></div><div class="cloumnsec_content_right"><span>[2017/12/29]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37148320&amp;zlsxid=06" title="最高人民法院关于审理仲裁司法审查案件若干问题的规定" target="_blank">最高人民法院关于审理仲裁司法审查案件若干问题的规定</a></div><div class="cloumnsec_content_right"><span>[2017/12/26]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37148334&amp;zlsxid=06" title="最高人民法院关于仲裁司法审查案件报核问题的有关规定" target="_blank">最高人民法院关于仲裁司法审查案件报核问题的有关规定</a></div><div class="cloumnsec_content_right"><span>[2017/12/26]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37111610&amp;zlsxid=06" title="最高人民法院关于审理医疗损害责任纠纷案件适用法律若干问题的解释" target="_blank">最高人民法院关于审理医疗损害责任纠纷案件适用法律若干问题的...</a></div><div class="cloumnsec_content_right"><span>[2017/12/13]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=37058296&amp;zlsxid=06" title="最高人民法院　最高人民检察院关于利用网络云盘制作、复制、贩卖、传播淫秽电子信息牟利行为定罪量刑问题的批复" target="_blank">最高人民法院　最高人民检察院关于利用网络云盘制作、复制、贩...</a></div><div class="cloumnsec_content_right"><span>[2017/11/22]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36843540&amp;zlsxid=06" title="最高人民法院关于适用《中华人民共和国公司法》若干问题的规定(四)" target="_blank">最高人民法院关于适用《中华人民共和国公司法》若干问题的规定...</a></div><div class="cloumnsec_content_right"><span>[2017/08/25]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36807238&amp;zlsxid=06" title="最高人民法院　最高人民检察院关于办理药品、医疗器械注册申请材料造假刑事案件适用法律若干问题的解释" target="_blank">最高人民法院　最高人民检察院关于办理药品、医疗器械注册申请...</a></div><div class="cloumnsec_content_right"><span>[2017/08/14]</span></div></div></div>
+						</div>
+						<div class="rightsider">
+							<div class="cloumnsec_title_first_left">
+								<div style="float: left; width: 440px">
+									<span>检察院</span>
+								</div>
+								<div style="float: left; width: 30px; text-align: center;">
+									<a href="javascript:goMore('06','','4','')">更多</a>
+								</div>
+							</div>
+							<div id="06_01" style="width: 100%; height: 200px;"><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=36075632&amp;zlsxid=06" title="人民检察院行政诉讼监督规则(试行)" target="_blank">人民检察院行政诉讼监督规则(试行)</a></div><div class="cloumnsec_content_right"><span>[2016/04/15]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=35474188&amp;zlsxid=06" title="最高人民检察院关于地质工程勘测院和其他履行勘测职责的单位及其工作人员能否成为刑法第二百二十九条规定的有关犯罪主体的批复" target="_blank">最高人民检察院关于地质工程勘测院和其他履行勘测职责的单位及...</a></div><div class="cloumnsec_content_right"><span>[2015/10/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=34125932&amp;zlsxid=06" title="最高人民检察院关于强迫借贷行为适用法律问题的批复" target="_blank">最高人民检察院关于强迫借贷行为适用法律问题的批复</a></div><div class="cloumnsec_content_right"><span>[2014/04/17]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=33781648&amp;zlsxid=06" title="关于审查起诉期间犯罪嫌疑人脱逃或者患有严重疾病的应当如何处理的批复" target="_blank">关于审查起诉期间犯罪嫌疑人脱逃或者患有严重疾病的应当如何处...</a></div><div class="cloumnsec_content_right"><span>[2013/12/27]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=33262374&amp;zlsxid=06" title="关于办理寻衅滋事刑事案件适用法律若干问题的解释" target="_blank">关于办理寻衅滋事刑事案件适用法律若干问题的解释</a></div><div class="cloumnsec_content_right"><span>[2013/07/15]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=33455944&amp;zlsxid=06" title="最高人民检察院关于废止1997年7月1日至2012年6月30日期间制发的部分司法解释性质文件的决定" target="_blank">最高人民检察院关于废止1997年7月1日至2012年6月3...</a></div><div class="cloumnsec_content_right"><span>[2013/03/01]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=33571194&amp;zlsxid=06" title="人民检察院刑事诉讼规则(试行)" target="_blank">人民检察院刑事诉讼规则(试行)</a></div><div class="cloumnsec_content_right"><span>[2012/11/22]</span></div></div><div class="cloumnsec_content"><div class="cloumnsec_content_left"><a href="http://210.82.32.100:8081/FLFG/flfgByID.action?flfgID=31500870&amp;zlsxid=06" title="最高人民检察院　公安部关于印发《最高人民检察院、公安部关于公安机关管辖的刑事案件立案追诉标准的规定(二)的补充规定》的通知" target="_blank">最高人民检察院　公安部关于印发《最高人民检察院、公安部关于...</a></div><div class="cloumnsec_content_right"><span>[2011/11/14]</span></div></div></div>
+						</div>
+					</div>
+				</div>
+				<div class="cloumn">
+					<div class="cloumntitle">
+						<div class="centertitle">
+							地方性法规规章
+						</div>
+					</div>
+					<div class="cloumn_nr">
+						<div class="threecloumn_one">
+							<ul class="threecloumntitle">
+								<li class="on2" id="nr1" onmouseover="showOrNonDivClass('nr',1,5,'on2','off2');">
+									<a href="javascript:goMore('','','','52')">北京</a>
+								</li>
+								<li class="off2" id="nr2" onmouseover="showOrNonDivClass('nr',2,5,'on2','off2');">
+									<a href="javascript:goMore('','','','53')">天津</a>
+								</li>
+								<li class="off2" id="nr3" onmouseover="showOrNonDivClass('nr',3,5,'on2','off2');">
+									<a href="javascript:goMore('','','','54')">河北</a>
+								</li>
+								<li class="off2" id="nr4" onmouseover="showOrNonDivClass('nr',4,5,'on2','off2');">
+									<a href="javascript:goMore('','','','55')">山西</a>
+								</li>
+								<li class="off2" id="nr5" onmouseover="showOrNonDivClass('nr', 5, 5, 'on2', 'off2');">
+									<a href="javascript:goMore('','','','56')">内蒙古</a>
+								</li>
+							</ul>
+							<ul id="nr_content1" style="display: block" class="threecloumnnr">
+								</ul>
+							<ul id="nr_content2" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr_content3" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr_content4" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr_content5" style="display: none" class="threecloumnnr">
+								</ul>
+
+						</div>
+						<div class="threecloumn_two">
+							<ul class="threecloumntitle">
+								<li class="on2" id="nr11" onmouseover="showOrNonDivClass('nr1',1,3,'on2','off2');">
+									<a href="javascript:goMore('','','','57')">辽宁</a>
+								</li>
+								<li class="off2" id="nr12" onmouseover="showOrNonDivClass('nr1',2,3,'on2','off2');">
+									<a href="javascript:goMore('','','','58')">吉林</a>
+								</li>
+								<li class="off2" id="nr13" onmouseover="showOrNonDivClass('nr1',3,3,'on2','off2');">
+									<a href="javascript:goMore('','','','59')">黑龙江</a>
+								</li>
+							</ul>
+							<ul id="nr1_content1" style="display: block" class="threecloumnnr">
+								
+								</ul>
+							<ul id="nr1_content2" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr1_content3" style="display: none" class="threecloumnnr">
+								</ul>
+						</div>
+						<div class="threecloumn_three">
+							<ul class="threecloumntitle">
+								<li class="on2" id="nr21" onmouseover="showOrNonDivClass('nr2',1,7,'on2','off2');">
+									<a href="javascript:goMore('','','','60')">上海</a>
+								</li>
+								<li class="off2" id="nr22" onmouseover="showOrNonDivClass('nr2',2,7,'on2','off2');">
+									<a href="javascript:goMore('','','','61')">江苏</a>
+								</li>
+								<li class="off2" id="nr23" onmouseover="showOrNonDivClass('nr2',3,7,'on2','off2');">
+									<a href="javascript:goMore('','','','62')">浙江</a>
+								</li>
+								<li class="off2" id="nr24" onmouseover="showOrNonDivClass('nr2',4,7,'on2','off2');">
+									<a href="javascript:goMore('','','','63')">安徽</a>
+								</li>
+								<li class="off2" id="nr25" onmouseover="showOrNonDivClass('nr2',5,7,'on2','off2');">
+									<a href="javascript:goMore('','','','64')">福建</a>
+								</li>
+								<li class="off2" id="nr26" onmouseover="showOrNonDivClass('nr2',6,7,'on2','off2');">
+									<a href="javascript:goMore('','','','65')">江西</a>
+								</li>
+								<li class="off2" id="nr27" onmouseover="showOrNonDivClass('nr2', 7, 7, 'on2', 'off2');">
+									<a href="javascript:goMore('','','','66')">山东</a>
+								</li>
+							</ul>
+							<ul id="nr2_content1" style="display: block" class="threecloumnnr">
+								</ul>
+							<ul id="nr2_content2" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr2_content3" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr2_content4" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr2_content5" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr2_content6" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr2_content7" style="display: none" class="threecloumnnr">
+								</ul>
+						</div>
+						<div class="threecloumn_one">
+							<ul class="threecloumntitle">
+								<li class="on2" id="nr31" onmouseover="showOrNonDivClass('nr3',1,6,'on2','off2');">
+									<a href="javascript:goMore('','','','67')">河南</a>
+								</li>
+								<li class="off2" id="nr32" onmouseover="showOrNonDivClass('nr3',2,6,'on2','off2');">
+									<a href="javascript:goMore('','','','68')">湖北</a>
+								</li>
+								<li class="off2" id="nr33" onmouseover="showOrNonDivClass('nr3',3,6,'on2','off2');">
+									<a href="javascript:goMore('','','','69')">湖南</a>
+								</li>
+								<li class="off2" id="nr34" onmouseover="showOrNonDivClass('nr3',4,6,'on2','off2');">
+									<a href="javascript:goMore('','','','70')">广东</a>
+								</li>
+								<li class="off2" id="nr35" onmouseover="showOrNonDivClass('nr3',5,6,'on2','off2');">
+									<a href="javascript:goMore('','','','71')">广西</a>
+								</li>
+								<li class="off2" id="nr36" onmouseover="showOrNonDivClass('nr3',6,6,'on2','off2');">
+									<a href="javascript:goMore('','','','72')">海南</a>
+								</li>
+							</ul>
+							<ul id="nr3_content1" style="display: block" class="threecloumnnr">
+								</ul>
+							<ul id="nr3_content2" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr3_content3" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr3_content4" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr3_content5" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr3_content6" style="display: none" class="threecloumnnr">
+								</ul>
+
+						</div>
+						<div class="threecloumn_two">
+							<ul class="threecloumntitle">
+								<li class="on2" id="nr41" onmouseover="showOrNonDivClass('nr4',1,5,'on2','off2');">
+									<a href="javascript:goMore('','','','74')">重庆</a>
+								</li>
+								<li class="off2" id="nr42" onmouseover="showOrNonDivClass('nr4',2,5,'on2','off2');">
+									<a href="javascript:goMore('','','','73')">四川</a>
+								</li>
+								<li class="off2" id="nr43" onmouseover="showOrNonDivClass('nr4',3,5,'on2','off2');">
+									<a href="javascript:goMore('','','','75')">贵州</a>
+								</li>
+								<li class="off2" id="nr44" onmouseover="showOrNonDivClass('nr4',4,5,'on2','off2');">
+									<a href="javascript:goMore('','','','76')">云南</a>
+								</li>
+								<li class="off2" id="nr45" onmouseover="showOrNonDivClass('nr4',5,5,'on2','off2');">
+									<a href="javascript:goMore('','','','77')">西藏</a>
+								</li>
+							</ul>
+							<ul id="nr4_content1" style="display: block" class="threecloumnnr">
+								</ul>
+							<ul id="nr4_content2" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr4_content3" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr4_content4" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr4_content5" style="display: none" class="threecloumnnr">
+								</ul>
+						</div>
+						<div class="threecloumn_three">
+							<ul class="threecloumntitle">
+								<li class="on2" id="nr51" onmouseover="showOrNonDivClass('nr5',1,5,'on2','off2');">
+									<a href="javascript:goMore('','','','78')">陕西</a>
+								</li>
+								<li class="off2" id="nr52" onmouseover="showOrNonDivClass('nr5',2,5,'on2','off2');">
+									<a href="javascript:goMore('','','','79')">甘肃</a>
+								</li>
+								<li class="off2" id="nr53" onmouseover="showOrNonDivClass('nr5',3,5,'on2','off2');">
+									<a href="javascript:goMore('','','','80')">青海</a>
+								</li>
+								<li class="off2" id="nr54" onmouseover="showOrNonDivClass('nr5',4,5,'on2','off2');">
+									<a href="javascript:goMore('','','','81')">宁夏</a>
+								</li>
+								<li class="off2" id="nr55" onmouseover="showOrNonDivClass('nr5',5,5,'on2','off2');">
+									<a href="javascript:goMore('','','','82')">新疆</a>
+								</li>
+							</ul>
+							<ul id="nr5_content1" style="display: block" class="threecloumnnr">
+								</ul>
+							<ul id="nr5_content2" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr5_content3" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr5_content4" style="display: none" class="threecloumnnr">
+								</ul>
+							<ul id="nr5_content5" style="display: none" class="threecloumnnr">
+								</ul>
+						</div>
+					</div>
+				</div>
+				<div style="text-align: center; color: #FFF; background-color: #1766b3; margin-top: 10px; padding: 20px;">
+					本库中的信息仅供参考，在正式场合使用时，请与标准文本核对！
+				</div>
+			</div>
+		</div>
+	
+
+</body></html>

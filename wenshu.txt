@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="X-UA-Compatible" content="IE=8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"><title>崔昌贵等贩卖、运输、制造毒品、杨林渠贩卖、制造毒品死刑复核刑事裁定书</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><link rel="bookmark" href="/favicon.ico" type="image/x-icon"><link href="/Assets/css/Admin.css" rel="stylesheet" type="text/css"><link href="/Assets/css/User.css" rel="stylesheet" type="text/css"><link href="/Assets/css/Index.css" rel="stylesheet" type="text/css"><link href="/Assets/css/List.css" rel="stylesheet" type="text/css"><link href="/Assets/css/Menu.css" rel="stylesheet" type="text/css"><link href="/Assets/css/MainIndex.css" rel="stylesheet" type="text/css">
+    <script src="https://hm.baidu.com/hm.js?d2caefee2de09b8a6ea438d74fd98db2"></script><script type="text/javascript" async="" src="http://static.gridsumdissector.com/js/Clients/GWD-002808-030F33/gs.js"></script><script src="/Scripts/jquery-1.4.1.js" type="text/javascript"></script>
+    <!--弹出框可移动-->
+    <script src="/Assets/js/Lawyee.CPWSW.WinDrag.js" type="text/javascript"></script>
+    <script src="/Assets/plugin/Lawyee.CPWSW.Content.Summary.js" type="text/javascript"></script>
+    <script src="/Assets/plugin/Lawyee.CPWSW.Content.Function.js" type="text/javascript"></script>
+    <script src="/Assets/plugin/Lawyee.CPWSW.Content.Directory.js" type="text/javascript"></script>
+    <script src="/Assets/plugin/Lawyee.CPWSW.Content.RelateFiles.js" type="text/javascript"></script>
+    <script src="/Assets/plugin/Lawyee.CPWSW.Content.Relation.js" type="text/javascript"></script>
+
+    <!--生成二维码start-->
+    <script src="/Assets/js/qrcode/qrcode.js" type="text/javascript"></script>
+    <!--生成二维码end-->
+    <script src="/Assets/js/Lawyee.CPWSW.MobileApp.js" type="text/javascript"></script>
+    <script src="/Assets/js1/Lawyee.CPWSW.Content.js" type="text/javascript"></script>
+    <script src="/Assets/js/Lawyee.CPWSW.User.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.json-2.3.min.js" type="text/javascript"></script>
+    <script src="/Assets/js/lawyee.namespace.root.js" type="text/javascript"></script>
+    
+    <!-- 日期选择框start -->
+    <script type="text/javascript" src="/Assets/js/libs/js/form/datePicker/WdatePicker.js"></script><link href="/Assets/js/libs/js/form/datePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+    <!-- 日期选择框end -->
+    <script src="/Assets/js/lawyee.namespace.root.js" type="text/javascript"></script>
+    <!-- 日志统计功能start -->
+    <script src="/Assets/js/Lawyee.CPWSW.WebsiteLog.js" type="text/javascript"></script>
+    <!-- 打印插件 -->
+    <script src="/Scripts/jquery.PrintArea.js" type="text/javascript"></script>
+   <script src="/Assets/js/Lawyee.CPWSW.GridSum.js" type="text/javascript"></script>
+        <script src="/Assets/js/Lawyee.CPWSW.BaiduStatic.js" type="text/javascript"></script>
+   
+   <script type="text/javascript">
+       var docID = "";
+       $(function () {
+           docID = queryString("DocID");
+           jQuery.getScript("/CreateContentJS/CreateContentJS.aspx?DocID=" + docID);
+       })
+       function queryString(fieldName) {
+           var urlString = document.location.search;
+           if (urlString != null) {
+               var typeQu = fieldName + "=";
+               var urlEnd = urlString.indexOf(typeQu);
+               if (urlEnd != -1) {
+                   var paramsUrl = urlString.substring(urlEnd + typeQu.length);
+                   var isEnd = paramsUrl.indexOf('&');
+                   if (isEnd != -1) {
+                       return paramsUrl.substring(0, isEnd);
+                   }
+                   else {
+                       return paramsUrl;
+                   }
+               }
+               else {
+                   return null;
+               }
+           }
+           else {
+               return null;
+           }
+       }
+   </script>
+    <script src="" id="createcontentjsfile" type="text/javascript"></script>
+    <style type="text/css">
+        .button
+        {
+            background: transparent url(/Assets/js/libs/skins/red/form/btn_bg.jpg) repeat scroll 0 0;
+            border: 1px solid #cc3428;
+            height: 24px;
+            line-height: 22px;
+            margin-right: 4px;
+            min-width: 60px;
+            color: White;
+            cursor: pointer;
+            background-color: #B91516;
+        }
+    </style>
+     <style type="text/css">
+ #fullbg { 
+        background-color:gray; 
+        left:0; 
+        opacity:0.5; 
+        position:absolute; 
+        top:0; 
+        z-index:3; 
+        filter:alpha(opacity=50); 
+        -moz-opacity:0.5; 
+        -khtml-opacity:0.5; 
+        } 
+        #dialog { 
+        background-color:#fff; 
+        border:5px solid rgba(0,0,0, 0.4); 
+        height:200px; 
+        left:50%; 
+        margin:-200px 0 0 -200px; 
+        padding:1px; 
+        position:fixed !important; /* 浮动对话框 */ 
+        position:absolute; 
+        top:50%; 
+        width:400px; 
+        z-index:999; 
+        border-radius:5px; 
+        display:none; 
+        border:#ccc 1px solid
+        } 
+        #dialog p { 
+        margin:0 0 12px; 
+        height:24px; 
+        line-height:24px; 
+        background:#CCCCCC; 
+        } 
+        #dialog p.close { 
+        text-align:right; 
+        padding-right:10px; 
+        } 
+        #dialog p.close a { 
+        color:#fff; 
+        text-decoration:none; 
+        } 
+         .dialogtxt
+        {
+            border:#cd3c3f 1px solid;
+            line-height:25px;
+            height:25px;
+            font-size:15px;
+        }
+        .dialogbtn
+        {
+            background-color:#cd3c3f;
+            color:white;
+            border:0px;
+            width:90px;
+            height:30px;
+            margin:10px
+        }
+         #dialog div
+         {
+            margin:20px  
+         }
+</style>
+    <!-- 日志统计功能end -->
+<script src="http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=427232"></script><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=8105b07e.css"></head>
+<body>
+    <div class="main">
+        <script src="../../Assets/js/Lawyee.CPWSW.ContentPageHead.js" type="text/javascript"></script><script src="/Assets/js/Lawyee.CPWSW.Common.js" type="text/javascript"></script>
+<div id="top" class="top">
+    <!--顶部工具栏-->
+    <div id="toolbar" class="toolbar">
+      <div class="toolbarcontent">
+            <div class="toolbarcontent_date">
+                <script language="JavaScript" type="text/javascript">
+                    today = new Date();
+                    function initArray() {
+                        this.length = initArray.arguments.length
+                        for (var i = 0; i < this.length; i++)
+                            this[i + 1] = initArray.arguments[i]
+                    }
+                    var d = new initArray(
+					'星期日',
+					 '星期一',
+					 '星期二',
+					 '星期三',
+					 '星期四',
+					 '星期五',
+					 '星期六');
+                    document.write(
+                  today.getFullYear(), '年',
+                  today.getMonth() + 1, '月',
+                  today.getDate(), '日 ',
+                  d[today.getDay() + 1]
+                 );
+                </script>2018年9月27日 星期四
+            </div>
+            <div class="toolbarcontent_listItem">
+                <div id="loginInfo" class="loginInfo"><a onclick="SaveUrl()" href="/User/RegisterAndLogin?Operate=1">登录</a> <a href="/User/RegisterAndLogin">注册</a></div>
+                <a href="/User/AddSuggest" target="_blank">意见建议</a>
+                <a href="/Index" target="_blank">返回首页</a>
+                <a href="http://www.court.gov.cn" target="_blank">返回主站</a>
+                <a href="javascript:void(0);" onclick="openApp()">App下载</a>
+            </div>
+        </div>
+    </div>
+    <div id="banner2_content">
+    </div>
+    <!--菜单-->
+</div>
+
+        <div class="content_main">
+                <div class="div_container">
+                    <div style="height: 25px;">
+                    </div>
+                    <div class="content_tool_left ">
+                        <div>
+                            <div id="divTool_Dir" class="div_tool_dir">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 70%; float: left;">
+                        
+                        <div class="relatefiles_container">
+                            <div class="relatefiles_banner">
+                                &nbsp;&nbsp;&nbsp;<label title="关联文书仅以本网收录的裁判文书为依据，如果对此结果有疑义，请联系作出裁判文书的人民法院。">关联文书</label></div>
+                            <div id="divRelateFiles" class="content_relatefiles">
+                            </div>
+                        </div>
+                        <div id="divContent" class="div_doc_container">
+                            <div id="Content">
+                                <div id="contentTitle" style="text-align: center; line-height: 25pt; margin: 0.5pt 0cm;
+                                    font-family: 黑体; font-size: 18pt;">崔昌贵等贩卖、运输、制造毒品、杨林渠贩卖、制造毒品死刑复核刑事裁定书</div>
+                                <div style="border-bottom: 1px dashed #BBBBBB; margin-bottom: 30px; height: 70px;">
+                                    <div style="height: 20px; padding-top: 43px;">
+                                        <table style="height: 20px; width: 100%;">
+                                            <tbody><tr>
+                                                <td style="font-size: 15px; font-family: '微软雅黑';text-align:left;" id="tdFBRQ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发布日期：2013-12-26</td>
+                                                <td>
+                                                </td>
+                                                <td id="con_llcs" style="font-size: 15px; font-family: '微软雅黑';">浏览：0次</td>
+                                                <td>
+                                                    <ul>
+                                                        <li style="display: inline;">
+                                                            <img id="img_download" style="padding-top: 3px; cursor: pointer;" src="/Assets/img/content/download_small.png" alt="点击下载文书" onclick="lawyeeToolbar.Save.Html2Word();" data-bd-imgshare-binded="1">&nbsp; </li>
+                                                        <li style="display: inline;">
+                                                            <img id="img_print" style="padding-top: 3px; cursor: pointer;" src="/Assets/img/content/print_small.png" onclick="lawyeeToolbar.Print.PrintHtml()" alt="点击打印文书" data-bd-imgshare-binded="1">
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
+                                </div>
+                                <div id="DivContent" style="TEXT-ALIGN: justify; text-justify: inter-ideograph; background: url('/Assets/img/content/bg_watermark.png') transparent;background-position-x: center;background-repeat-x: no-repeat;"><a type="dir" name="WBSB"></a><div style="TEXT-ALIGN: center; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 0cm; FONT-FAMILY: 宋体; FONT-SIZE: 22pt;">中华人民共和国最高人民法院</div><div style="TEXT-ALIGN: center; LINE-HEIGHT: 30pt; MARGIN: 0.5pt 0cm; FONT-FAMILY: 仿宋; FONT-SIZE: 26pt;">刑 事 裁 定 书</div><a type="dir" name="DSRXX"></a><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">被告人崔昌贵，绰号“鬼子”，男，汉族，1970年3月18日出生，河南省洛阳市人，小学文化，无业，住洛阳市××区×××××小区×号楼×门×××号。2009年5月12日被逮捕。现在押。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">被告人李占勇，男，汉族，1972年9月6日出生，河南省襄城县人，初中文化，无业，住河南省平顶山市××区××路××号院×号楼×号。1997年11月25日因犯敲诈勒索罪被判处有期徒刑二年，1999年9月11日刑满释放。2009年5月12日因本案被逮捕。现在押。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">被告人杨林渠，绰号“阿文”，化名“赵明”、“王涛”、“邓耀清”，男，汉族，1979年7月10日出生，河南省襄城县人，初中文化，无业，住河南省许昌县×××镇××院。2009年6月19日被逮捕。现在押。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">被告人赵建东，男，汉族，1974年4月12日出生，河南省襄城县人，初中文化，农民，住襄城县××镇××村×号×××。2006年6月20日因犯盗窃罪被判处有期徒刑一年，缓刑一年，并处罚金人民币五千元。2009年6月19日因本案被逮捕。现在押。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">被告人刘文涛，绰号“肥仔”，男，汉族，1980年5月4日出生，河南省临颍县人，初中文化，无业，住临颍县×××镇×××村×××号。2009年5月12日被逮捕。现在押。</div><a type="dir" name="SSJL"></a><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">河南省漯河市中级人民法院审理漯河市人民检察院指控被告人崔昌贵、李占勇、赵建东、刘文涛犯贩卖、运输、制造毒品罪、被告人杨林渠犯贩卖、制造毒品罪一案，于2010年11月2日以（2010）漯刑三初字第06号刑事判决，认定被告人崔昌贵犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人李占勇犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人杨林渠犯贩卖、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人赵建东犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人刘文涛犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产。宣判后，崔昌贵、李占勇、杨林渠、赵建东、刘文涛提出上诉。河南省高级人民法院经依法开庭审理，于2012年11月26日以(2011)豫法刑四终字第100号刑事判决，维持原审对被告人崔昌贵、李占勇、杨林渠、赵建东、刘文涛的判决，并依法报请本院核准。本院依法组成合议庭，对本案进行了复核，依法讯问了被告人，听取了辩护律师意见。现已复核终结。</div><a type="dir" name="AJJBQK"></a><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">经复核确认：</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">一、贩卖、运输、制造“麻古”（含甲基苯丙胺成分的片剂）的事实</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">1、2006年5月，被告人杨林渠、崔昌贵、李占勇伙同杨某某（在逃）等人共谋合伙制造“麻古”，由杨林渠提供制造“麻古”的主要原料甲基苯丙胺（冰毒），崔昌贵和杨某某购买辅料、租赁制毒地点以及负责加工制造，杨林渠按每粒一元向崔昌贵和杨某某支付加工费，制造的“麻古”由杨林渠、李占勇贩卖。之后，崔昌贵、杨某某等人在河南省洛阳市××区××路××街×号所租房屋内制造“麻古”约5万粒（每粒约0.1克，下同），由杨林渠、李占勇在广东省珠海市予以贩卖，其中李占勇贩卖约2.5万粒。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">2、2006年8月至12月间，被告人杨林渠、崔昌贵、李占勇将生产“麻古”的场地从河南省洛阳市迁至由李占勇帮助租赁的广东省惠州市××区××镇××村××××厂一个楼顶的简易房，并将制毒工具从洛阳市运至该制毒场地。李占勇指使同案被告人严伟雄（已判刑）帮助杨林渠在广东省深圳市购买甲基苯丙胺11千克。杨林渠将该批甲基苯丙胺交给崔昌贵、杨某某制造出“麻古”100余万粒，由其与李占勇贩卖，其中李占勇贩卖约20余万粒。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">3、2007年5月至6月间，被告人李占勇、刘文涛购买甲基苯丙胺，交由被告人崔昌贵和杨某某在广东省惠州市××区××镇××村××××厂的另一楼顶简易房内，利用之前的工具制造“麻古”10余万粒。李占勇、刘文涛等人将制成的部分“麻古”予以贩卖。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">4、2008年8月至2009年4月间，被告人崔昌贵、刘文涛共谋合伙制造、贩卖“麻古”。刘文涛出资购买甲基苯丙胺约2？000余克（其中约700克甲基苯丙胺由崔昌贵通过被告人李占勇购买）。崔昌贵购买了咖啡因、香兰素等辅料，先后在河南省漯河市××区××路××号院×号楼×单元×楼×户所租房屋、×××苑×号楼×单元×楼×户所租房屋、××区××路×××村熊某某家制造“麻古”共计约20万粒。崔昌贵指使同案被告人于四福、李昌茂（均已判刑）等人将制成的部分“麻古”运到广东省珠海市交由刘文涛贩卖，其余部分由崔昌贵、同案被告人郑公社、翟进珂（均已判刑）等人在漯河市、洛阳市等地贩卖。案发后公安机关从上述制毒地点查获“麻古”成品、半成品及含有甲基苯丙胺的物质共2？097克、咖啡因4？045.9克、海洛因1克、麻黄素9.7克、氯胺酮446克以及香兰素等制毒辅料和搅拌机、压片机等制毒工具。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">5、2007年6月至2008年11月，被告人崔昌贵多次通过同案被告人李昌茂（已判刑）从山西省购买制造“麻古”的原料咖啡因共计70余千克。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">上述事实，有第一审、第二审开庭审理中经质证确认的从被告人崔昌贵的租住处查获的“麻古”成品、半成品、含有甲基苯丙胺的物质、咖啡因等毒品及制毒辅料、制毒工具等物的照片，银行业务凭证、证实被告人李占勇曾因犯罪被判刑的释放证明，证人李某某、杜某某、张某等的证言，毒品鉴定意见，现场勘验、检查、辨认笔录，同案被告人严伟雄、郑公社、于四福、李昌茂、梁连成、翟进珂、陈贵花的供述等证据证实。被告人崔昌贵、李占勇、刘文涛亦供认，被告人杨林渠亦曾供认。足以认定。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">二、贩卖、运输、制造氯胺酮（俗称“K粉”）的事实</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">1、2008年12月，被告人崔昌贵、赵建东、李占勇、刘文涛共谋合伙制造氯胺酮，由崔昌贵纠集同案被告人郑公社、于四福、李昌茂以及梁连成（已判刑）参与制造，由赵建东雇请段某某、“军军”（均在逃）进行指导，氯胺酮制成后运至珠海市由李占勇、刘文涛贩卖。之后，崔昌贵指使梁连成租赁漯河市××路××立交桥旁一个废窑场作为制毒场地；郑公社、梁连成购买了脱水机等制毒工具；赵建东购买了乙酯、丙酮等制毒辅料。崔昌贵出资10万元，赵建东出资20万元，郑公社出资3.5万元，梁连成出资4万元，由赵建东、崔昌贵从同案被告人陈冬浩（已判刑）处以每箱4.5万元的价格购买了8箱制毒主料盐酸羟亚胺。其间李占勇购得6箱半盐酸羟亚胺指使他人运至漯河市交给崔昌贵，段某某亦提供了3箱盐酸羟亚胺。赵建东、郑公社、于四福、梁连成、李昌茂、段某某、“军军”等人共制造氯胺酮190余千克，其中段某某带走30余千克。崔昌贵、李占勇安排刘文涛、郑公社等人将160千克氯胺酮运至广东省中山市交给李占勇。李占勇安排赵某某（甲）（另案处理）等人在珠海市予以贩卖。2009年3月，李昌茂受崔昌贵的指使前往珠海市从刘文涛处将其中质量较次的约7千克氯胺酮运回重新加工。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">2、2009年1月至2月，被告人李占勇出资90万元，由被告人崔昌贵、赵建东从陈冬浩处购买20箱盐酸羟亚胺用于制造氯胺酮，其中王某某（另案处理）运走6箱。崔昌贵、赵建东、郑公社、于四福、梁连成等人在漯河市××路××立交桥旁的废窑场内继续制造氯胺酮。后崔昌贵等人恐罪行败露，又转移至梁连成租赁的漯河市××县××路×段赵某某（乙）出租房内继续制造。同年2月上旬，崔昌贵等人将制成的160千克氯胺酮运至广东省中山市交给被告人刘文涛。在李占勇的指使下，刘文涛、赵某某（甲）等人将该批氯胺酮贩卖。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">3、2009年3月初，被告人崔昌贵、赵建东伙同同案被告人郑公社、李昌茂、于四福、梁连成将制造氯胺酮的场地从赵某某（乙）的出租房转移至漯河市××区×××村公墓旁边赵某某（丙）的果园。崔昌贵和赵建东从同案被告人陈冬浩处购买3箱盐酸羟亚胺，由赵建东、郑公社等人在果园内制造氯胺酮24千克。崔昌贵、赵建东安排于四福和“老四”（在逃）乘长途汽车将该批氯胺酮运至广东省东莞市，由“老四”予以贩卖。于四福将贩卖所得的15万元赃款带回漯河交给崔昌贵。之后，崔昌贵和赵建东又从陈冬浩处购买4箱盐酸羟亚胺继续在果园制造氯胺酮，被公安机关抓获。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">4、2008年11月，被告人崔昌贵指使于四福乘长途汽车将用被子包裹的8千克氯胺酮从河南省漯河市运至广东省珠海市交给被告人刘文涛。后因质量问题，崔昌贵又指使于四福前去珠海市从刘文涛处将该批氯胺酮运回。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">5、2008年10月，被告人李占勇在河南省平顶山市分两次向他人购买了12千克和19千克氯胺酮，装入旅行箱内，伙同同案被告人李瑛（已判刑）、赵某某（甲）、耿某某（在逃）驾车从平顶山市运输至珠海市，存放于被告人刘文涛为李占勇所租的房屋内。后李占勇、刘文涛将该批氯胺酮在珠海市予以贩卖。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">案发后，公安机关从制毒场所漯河市××县××路×段赵某某（乙）出租房内查获正在晾晒的氯胺酮13.315千克及脱水机等制毒工具；从漯河市××区××村公墓旁边赵某某（丙）的果园内查获含有氯胺酮的物质150.154千克及脱水机、活性炭、氨水等制毒工具和原料；从被告人刘文涛在珠海市为被告人李占勇租赁的用于存放毒品的三处出租房内查获“麻古”4？019.33克、含有甲基苯丙胺成分的物质6？929.44克、氯胺酮10.57424千克、咖啡因1.31千克和麻黄素54.28克，以及电子秤、筛子、空塑料封口袋等贩毒工具。公安人员在抓获李占勇、刘文涛时，从二人随身携带的提包内查获甲基苯丙胺和“麻古”共216.43克。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">上述事实，有第一审、第二审开庭审理中经质证确认的查获的氯胺酮、甲基苯丙胺、“麻古”、含有氯胺酮的物质以及制毒辅料、制毒工具、贩毒工具等物的照片，银行业务凭证、证实被告人赵建东曾因犯罪被判刑的刑事判决书，证人马某某、赵某某（乙）、赵某某（丙）等的证言，毒品鉴定意见，现场勘验、检查、辨认笔录，同案被告人郑公社、于四福、李昌茂、梁连成、陈冬浩、李旭照、陈贵花、李瑛的供述等证据证实。被告人崔昌贵、李占勇、赵建东、刘文涛亦供认。足以认定。</div><a type="dir" name="CPYZ"></a><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">本院认为，被告人崔昌贵、李占勇伙同他人贩卖、运输、制造“麻古”、氯胺酮，其行为已构成贩卖、运输、制造毒品罪。被告人杨林渠伙同他人贩卖、制造“麻古”，其行为已构成贩卖、制造毒品罪。被告人赵建东伙同他人贩卖、运输、制造氯胺酮，其行为已构成贩卖、运输、制造毒品罪。被告人刘文涛伙同他人贩卖、运输、制造“麻古”，伙同他人贩卖、运输氯胺酮，其行为已构成贩卖、运输、制造毒品罪。崔昌贵、李占勇、赵建东、刘文涛伙同他人制造毒品并进行贩卖、运输，杨林渠参与制造毒品并进行贩卖，五人在共同犯罪中均起主要作用，均系主犯，均应按照其所参与的全部犯罪处罚。崔昌贵参与制造、贩卖、运输“麻古”约137.097千克、氯胺酮约545.915千克；李占勇参与制造、贩卖、运输“麻古”约120.129千克、氯胺酮约351千克；杨林渠参与制造、贩卖“麻古”约105千克；赵建东参与制造、贩卖、运输氯胺酮约537.469千克；刘文涛参与制造、贩卖、运输“麻古”约36.929千克、氯胺酮约359千克，五被告人参与毒品犯罪的数量均特别巨大，且系长期从事源头性的毒品犯罪，大部分毒品已流入社会，社会危害极大，罪行极其严重。李占勇曾因犯罪被判刑，刑满释放后又犯罪，赵建东曾因犯罪被判处缓刑，缓刑考验期满后又犯罪，主观恶性深，人身危险性大。对五被告人均应依法惩处。第一审、第二审判决认定的事实清楚，证据确实、充分，定罪准确，量刑适当。审判程序合法。依照《中华人民共和国刑事诉讼法》第二百三十五条、第二百三十九条和《最高人民法院关于适用〈中华人民共和国刑事诉讼法〉的解释》第三百五十条第（一）项的规定，裁定如下：</div><a type="dir" name="PJJG"></a><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">核准河南省高级人民法院(2011)豫法刑四终字第100号维持第一审对被告人崔昌贵以贩卖、运输、制造毒品罪判处死刑，剥夺政治权利终身，并处没收个人全部财产；对被告人李占勇以贩卖、运输、制造毒品罪判处死刑，剥夺政治权利终身，并处没收个人全部财产；对被告人杨林渠以贩卖、制造毒品罪判处死刑，剥夺政治权利终身，并处没收个人全部财产；对被告人赵建东以贩卖、运输、制造毒品罪判处死刑，剥夺政治权利终身，并处没收个人全部财产；对被告人刘文涛以贩卖、运输、制造毒品罪判处死刑，剥夺政治权利终身，并处没收个人全部财产的刑事判决。</div><div style="LINE-HEIGHT: 25pt;TEXT-ALIGN:justify;TEXT-JUSTIFY:inter-ideograph; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">本裁定自宣告之日起发生法律效力。</div><a type="dir" name="WBWB"></a><div style="TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 72pt 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">审　判　长　　王培中</div><div style="TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 72pt 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">代理审判员　　翁彤彦</div><div style="TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 72pt 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">代理审判员　　毛　洁</div><br><div style="TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 72pt 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">二〇一三年六月二十四日</div><div style="TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 72pt 0.5pt 0cm;FONT-FAMILY: 仿宋; FONT-SIZE: 16pt;">书　记　员　　陈琳琳</div></div>
+                            </div>
+                        </div>
+                    </div>
+                     <div id="divTool" class="content_tool_right ">
+                    <div>
+                        <div id="divTool_Summary" class="right">
+                        <ul><li class="attribute"><a href="#" class="outline tool_dir_common">概要</a><div class="info"><div class="con"><div class="icon"><img src="/Assets/img/content/content_directory_spot2.png" data-bd-imgshare-binded="1"></div><div class="content_tool_common"> <div class="content_info_common">基本信息</div> </div><div class="relateinfo"><table class="table_info"><tbody><tr><th>&nbsp;&nbsp;审理法院：</th><td><a target="_blank" href="/List/List?sorttype=1&amp;conditions=searchWord++法院名称+最高人民法院+法院名称:最高人民法院">最高人民法院</a></td></tr><tr><th>&nbsp;&nbsp;案件类型：</th><td><a target="_blank" href="/List/List?sorttype=1&amp;conditions=searchWord++案件类型+刑事案件+案件类型:刑事案件">刑事案件</a></td></tr><tr><th>&nbsp;&nbsp;审理程序：</th><td>其他</td></tr><tr><th>&nbsp;&nbsp;裁判日期：</th><td>2013-06-24</td></tr><tr><th>&nbsp;&nbsp;当事人：</th><td>崔昌贵,李占勇,杨林渠,赵建东,刘文涛</td></tr></tbody></table></div><div class="content_tool_common"> <div class="content_info_common">法律依据</div> </div><div class="relateinfo">   <table> <tbody><tr>        <td clss="relate_doc_td2">&nbsp;&nbsp;《中华人民共和国刑事诉讼法（2012年）》</td> </tr> <tr>        <td clss="relate_doc_td2">&nbsp;&nbsp;&nbsp;&nbsp;<a name="actItem" href="javascript:void(0);">第二百三十五条</a></td> </tr> <tr>        <td clss="relate_doc_td2">&nbsp;&nbsp;&nbsp;&nbsp;<a name="actItem" href="javascript:void(0);">第二百三十九条</a></td> </tr> <tr>        <td clss="relate_doc_td2">&nbsp;&nbsp;最高人民法院关于适用《中华人民共和国刑事诉讼法》的解释</td> </tr> <tr>        <td clss="relate_doc_td2">&nbsp;&nbsp;&nbsp;&nbsp;<a name="actItem" href="javascript:void(0);">第三百五十条</a></td> </tr>  </tbody></table></div><div class="icon"><img src="/Assets/img/content/content_directory_spot2.png" data-bd-imgshare-binded="1"></div></div></div></li></ul></div>
+                        <div id="divTool_Relation" class="right"></div>
+                        <div id="divTool_Share" class="div_tool_share">
+                        <div class="tool_share"><div class="">      <div class="bdsharebuttonbox bdshare-temp bdshare-button-style0-16" id="share" data-bd-bind="1538039852444"><img id="imgtool" src="/Assets/img/content/close.png" title="关闭" style="cursor: pointer;" data-bd-imgshare-binded="1"><a title="通过中国司法案例网身份认证的会员（主要包括法官、律师、法律学者、法律院校学生）才能推荐裁判文书到中国司法案例网，经全体会员众筹投票，符合条件可收入最高人民法院司法案例库" id="btnalfx" href="javascript:void(0);"></a><a id="fx" title="点击进行分享" data-cmd="more" href="javascript:void(0);"></a></div><div class=""><a title="点击进行留言" id="comment" style="cursor:pointer;"><img src="../../Assets/img/content/content_comment.jpg" data-bd-imgshare-binded="1"></a></div></div></div><div id="tdcShow" style="cursor:pointer;" class="totop"><img src="../../Assets/img/content/content_tdc_show.png" data-bd-imgshare-binded="1"></div><div id="totop" class="totop"><a id="comment"><img src="../../Assets/img/content/content_totop.png" data-bd-imgshare-binded="1"></a></div></div>
+                    </div>
+                    </div>
+                    <div id="divNotice" class="content_notice">
+                        <div class="content_notice_head">
+                            公&nbsp;告</div>
+                        <div class="content_notice_body">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一、本裁判文书库公布的裁判文书由相关法院录入和审核，并依据法律与审判公开的原则予以公开。若有关当事人对相关信息内容有异议的，可向公布法院书面申请更正或者下镜。
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二、本裁判文书库提供的信息仅供查询人参考，内容以正式文本为准。非法使用裁判文书库信息给他人造成损害的，由非法使用人承担法律责任。
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三、本裁判文书库信息查询免费，严禁任何单位和个人利用本裁判文书库信息牟取非法利益。
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;四、未经允许，任何商业性网站不得建立本裁判文书库的镜像（包括全部和局部镜像）。
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五、根据有关法律规定，相关法院依法定程序撤回在本网站公开的裁判文书的，其余网站有义务免费及时撤回相应文书。
+                        </div>
+                    </div>
+                <div id="divLawItems" class="divcontent_comment display_none" style="width:auto;height:480px;position: absolute;top:261px;"><div class="content_comment_head"><table><tbody><tr><td class="info">法律依据</td><td class="close"><img style="cursor: pointer;" alt="点击关闭" src="../../Assets/img/content/content_comment_close.png" onclick="$('#divLawItems').hide();" data-bd-imgshare-binded="1"></td></tr></tbody></table></div><div class="content_lawitems_body" style="height:456px;overflow-y:auto;"><table id="comment_item_table"><tbody><tr class="comment_font">       <td>          《中华人民共和国刑事诉讼法（2012年）》       </td></tr><tr class="comment_font"><td>    第二百三十五条　死刑由最高人民法院核准。<br></td></tr><tr class="comment_font"><td>    第二百三十九条　最高人民法院复核死刑案件，应当作出核准或者不核准死刑的裁定。对于不核准死刑的，最高人民法院可以发回重新审判或者予以改判。<br></td></tr><tr class="comment_font">       <td>          最高人民法院关于适用《中华人民共和国刑事诉讼法》的解释       </td></tr><tr class="comment_font"><td>    第三百五十条　最高人民法院复核死刑案件，应当按照下列情形分别处理：<br><br>    （一）原判认定事实和适用法律正确、量刑适当、诉讼程序合法的，应当裁定核准；<br>    （二）原判认定的某一具体事实或者引用的法律条款等存在瑕疵，但判处被告人死刑并无不当的，可以在纠正后作出核准的判决、裁定；<br>    （三）原判事实不清、证据不足的，应当裁定不予核准，并撤销原判，发回重新审判；<br>    （四）复核期间出现新的影响定罪量刑的事实、证据的，应当裁定不予核准，并撤销原判，发回重新审判；<br>    （五）原判认定事实正确，但依法不应当判处死刑的，应当裁定不予核准，并撤销原判，发回重新审判；<br>    （六）原审违反法定诉讼程序，可能影响公正审判的，应当裁定不予核准，并撤销原判，发回重新审判。<br></td></tr><tr class="comment_font"><td><div class="lawitems_statement"><div class="statement_head">免责声明</div><div class="statement_body">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法律依据仅供参考，如有需要，请您在核实裁判文书与相应法律、法规版本后慎重使用，并自行承担法律后果。</div></div></td></tr></tbody></table></div></div></div>
+                <div id="divContent_comment" class="divcontent_comment display_none" style="top: 30%;
+                    left: 30%;">
+                    <div class="content_comment_head">
+                        <table>
+                            <tbody><tr>
+                                <td class="info">
+                                    我要留言
+                                </td>
+                                <td class="close">
+                                    <img style="cursor: pointer;" onclick=" $('.divcontent_comment').hide();$('#comment').find('img:first').attr('src', '/Assets/img/content/content_comment.jpg');" alt="点击关闭留言框" src="/Assets/img/content/content_comment_close.png" data-bd-imgshare-binded="1">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="content_comment_body">
+                        <table>
+                            <tbody><tr class="source_info comment_font">
+                                <td style="width: 15%;">
+                                    <div style="height: 100%;">
+                                        留言来源：</div>
+                                </td>
+                                <td style="width: 85%;" id="tdSource">崔昌贵等贩卖、运输、制造毒品、杨林渠贩卖、制造毒品死刑复核刑事裁定书 无</td>
+                            </tr>
+                            <tr class="comment_info comment_font">
+                                <td>
+                                    留言内容：
+                                </td>
+                                <td>
+                                    <textarea id="commentArea" maxlength="200" style="width: 320px;"></textarea>(200字以内)
+                                </td>
+                            </tr>
+                            <tr class="comment_btn">
+                                <td style="text-align: center;" colspan="2">
+                                    <input type="button" value="提交" class="button" onclick="Content.Comment.LeaveWords_Save();">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="button" value="重置" class="button" onclick="Content.Comment.LeaveWords_Reset();">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+                <div id="divtdc" class="divcontent_comment display_none" style="top: 25%; left: 35%;
+                    width: 400px; height: 380px; background-color: #FFFFFF;">
+                    <div class="content_comment_head">
+                        <table>
+                            <tbody><tr>
+                                <td class="info">
+                                    二维码
+                                </td>
+                                <td class="close">
+                                    <img style="cursor: pointer;" onclick=" $('#divtdc').hide();" alt="点击关闭二维码扫描" src="/Assets/img/content/content_comment_close.png" data-bd-imgshare-binded="1">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="content_comment_body">
+                        <div id="tdc" style="height: 200px; width: 200px; margin: 50px 50px 50px 80px; text-align: center;">
+                        </div>
+                    </div>
+                </div>
+                <div id="divtdcApp" class="divcontent_comment display_none" style="top: 25%; left: 35%; width: 400px; height: 380px; background-color: rgb(255, 255, 255); z-index: 99999;"> <div class="content_comment_head"><table><tbody><tr><td class="info">APP二维码</td><td class="close"><img style="cursor: pointer;" onclick=" $('#divtdcApp').hide();" alt="点击关闭二维码扫描" src="/Assets/img/content/content_comment_close.png" data-bd-imgshare-binded="1"></td></tr></tbody></table></div><div class="content_comment_body"><div id="tdcApp" style="height: 200px; width: 200px; margin: 20px 50px; text-align: center;"><img src="/MobilePage/images/cpwswApp.png" width="300px" heigth="300px" data-bd-imgshare-binded="1"></div></div></div>
+        </div>
+        <script src="/Assets/js/Lawyee.CPWSW.PageFooter.js" type="text/javascript"></script> <div id="bottom" class="bottom"> <div class="container containerFisrt">   |<a href="http://govinfo.nlc.gov.cn" target="_blank">中国政府公开信息整合服务平台</a>|<a href="http://www.ajxxgk.jcy.cn/html/index.html" target="_blank">人民检察院案件信息公开网</a>|  </div>   <div class="container">        |<a href="http://www.court.gov.cn/zgsplcxxgkw/" target="_blank">中国审判流程信息公开网</a>|<a href="http://shixin.court.gov.cn" target="_blank">中国执行信息公开网</a>|<a href="http://www.ccmt.org.cn" target="_blank">中国涉外商事海事审判网</a>|<a href="http://www.court.gov.cn/qgfyjxjszyjwzxxxw/" target="_blank">全国法院减刑、假释、暂予监外执行信息网</a>|<a href="/Index/Help" target="_blank">裁判文书网使用帮助</a>   </div> <div style="height:15px;"></div>  <div class="container3">       地址：北京市东城区东交民巷27号&nbsp;&nbsp;&nbsp;&nbsp;邮编：100745&nbsp;&nbsp;&nbsp;&nbsp;总机：010-67550114&nbsp;&nbsp;&nbsp;&nbsp;  </div>   <div class="container3">      中华人民共和国最高人民法院 版权所有<p></p>   </div>   <div class="container3">       京ICP备05023036号   </div> </div>
+    </div>
+    <input type="hidden" id="hidDocID" value="f08d44ee-b647-11e3-84e9-5cf3fc0c2c18">
+    <input type="hidden" id="hidRequireLogin" value="0">
+    <input type="hidden" id="hidCaseName" value="崔昌贵等贩卖、运输、制造毒品、杨林渠贩卖、制造毒品死刑复核刑事裁定书">
+    <input type="hidden" id="hidCaseNumber" value="无">
+    <input type="hidden" id="hidCaseInfo" value="{&quot;法院ID&quot;:&quot;0&quot;,&quot;案件基本情况段原文&quot;:&quot;&quot;,&quot;附加原文&quot;:null,&quot;审判程序&quot;:&quot;其他&quot;,&quot;案号&quot;:&quot;无&quot;,&quot;不公开理由&quot;:null,&quot;法院地市&quot;:null,&quot;法院省份&quot;:null,&quot;文本首部段落原文&quot;:&quot;&quot;,&quot;法院区域&quot;:null,&quot;文书ID&quot;:&quot;f08d44ee-b647-11e3-84e9-5cf3fc0c2c18&quot;,&quot;案件名称&quot;:&quot;崔昌贵等贩卖、运输、制造毒品、杨林渠贩卖、制造毒品死刑复核刑事裁定书&quot;,&quot;法院名称&quot;:&quot;最高人民法院&quot;,&quot;裁判要旨段原文&quot;:&quot;&quot;,&quot;法院区县&quot;:null,&quot;补正文书&quot;:&quot;2&quot;,&quot;DocContent&quot;:&quot;&quot;,&quot;文书全文类型&quot;:null,&quot;诉讼记录段原文&quot;:&quot;河南省漯河市中级人民法院审理漯河市人民检察院指控被告人崔昌贵、李占勇、赵建东、刘文涛犯贩卖、运输、制造毒品罪、被告人杨林渠犯贩卖、制造毒品罪一案，于2010年11月2日以（2010）漯刑三初字第06号刑事判决，认定被告人崔昌贵犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人李占勇犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人杨林渠犯贩卖、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人赵建东犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产；被告人刘文涛犯贩卖、运输、制造毒品罪，判处死刑，剥夺政治权利终身，并处没收个人全部财产。宣判后，崔昌贵、李占勇、杨林渠、赵建东、刘文涛提出上诉。河南省高级人民法院经依法开庭审理，于2012年11月26日以（2011）豫法刑四终字第100号刑事判决，维持原审对被告人崔昌贵、李占勇、杨林渠、赵建东、刘文涛的判决，并依法报请本院核准。本院依法组成合议庭，对本案进行了复核，依法讯问了被告人，听取了辩护律师意见。现已复核终结&quot;,&quot;判决结果段原文&quot;:&quot;&quot;,&quot;文本尾部原文&quot;:&quot;&quot;,&quot;上传日期&quot;:&quot;/Date(1388040660000)/&quot;,&quot;案件类型&quot;:&quot;1&quot;,&quot;诉讼参与人信息部分原文&quot;:&quot;&quot;,&quot;文书类型&quot;:null,&quot;裁判日期&quot;:null,&quot;结案方式&quot;:null,&quot;效力层级&quot;:null}">
+    <input type="hidden" id="hidCourt" value="最高人民法院">
+    <input type="hidden" id="hidCaseType" value="1">
+    <input type="hidden" id="HidCourtID" value="0">
+    <input type="hidden" id="hidPageType" value="CPWSW">
+
+
+<iframe frameborder="0" id="bdSharePopup_selectshare1538039852456bg" class="bdselect_share_bg" style="display:none;"></iframe><div id="bdSharePopup_selectshare1538039852456box" style="display:none;" share-type="selectshare" class="bdselect_share_box" data-bd-bind="1538039852455"><div class="selectshare-mod-triangle"><div class="triangle-border"></div><div class="triangle-inset"></div></div><div class="bdselect_share_head"><span>分享到</span><a href="http://www.baidu.com/s?wd=&amp;tn=SE_hldp08010_vurs2xrp" class="bdselect_share_dialog_search" target="_blank"><i class="bdselect_share_dialog_search_i"></i><span class="bdselect_share_dialog_search_span">百度一下</span></a><a class="bdselect_share_dialog_close"></a></div><div class="bdselect_share_content"><ul class="bdselect_share_list bdshare-button-style0-16"><div class="bdselect_share_partners"></div><a href="#" class="bds_more" data-cmd="more"></a></ul></div></div><div id="bdimgshare_1538039852461" class="sr-bdimgshare sr-bdimgshare-list sr-bdimgshare-16 sr-bdimgshare-black" style="height:36px;line-height:26px;font-size:12px;width:autopx;display:none;" data-bd-bind="1538039852460"><div class="bdimgshare-bg"></div><div class="bdimgshare-content bdsharebuttonbox bdshare-button-style0-16"><label class="bdimgshare-lbl">分享到：</label><a href="#" onclick="return false;" class="bds_qzone" data-cmd="qzone" hidefocus=""></a><a href="#" onclick="return false;" class="bds_tsina" data-cmd="tsina" hidefocus=""></a><a href="#" onclick="return false;" class="bds_tqq" data-cmd="tqq" hidefocus=""></a><a href="#" onclick="return false;" class="bds_renren" data-cmd="renren" hidefocus=""></a><a href="#" onclick="return false;" class="bds_weixin" data-cmd="weixin" hidefocus=""></a><a href="#" onclick="return false;" class="bds_more" data-cmd="more" hidefocus=""></a></div></div></body></html>
